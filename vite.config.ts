@@ -16,5 +16,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
-  base: '/fantasy-wiki-test/'
+  base: '/inoraxilum-wiki/'
 });
