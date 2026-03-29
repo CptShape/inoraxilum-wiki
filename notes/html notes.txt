@@ -1,0 +1,15 @@
+<table class="tableRow">
+        <caption>Irk Avantaj Tablosu</caption>
+        <tbody>
+            <tr>
+                <th colspan="1">.</th>
+                <td>.</td>
+            </tr>
+        </tbody>
+</table>
+
+<div class="bottom-nav">
+  <a class="btn" href="../">⬅️ .</a>
+  <a class="btn" href="../">Codex</a>
+  <a class="btn" href="../">. ➡️</a>
+</div>
