@@ -1,0 +1,22 @@
+.burglar-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #111827; /* gray-900 */
+  color: #d1d5db; /* gray-300 */
+  border: 2px solid #374151; /* gray-700 */
+}
+
+.burglar-table thead {
+  background-color: #1f2937; /* gray-800 */
+  color: #facc15; /* yellow-400 */
+  border-bottom: 2px solid #facc15;
+}
+
+.burglar-table th, .burglar-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #374151;
+}
+
+.burglar-table tr:hover {
+  background-color: rgba(250, 204, 21, 0.05); /* yellow-400 opacity */
+}

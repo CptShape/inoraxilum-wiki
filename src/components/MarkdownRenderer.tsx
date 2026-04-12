@@ -1,8 +1,16 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import type { Components } from 'react-markdown';
+import { Chapter } from '../types';
+import { getTimelineConfig, parseMarkdownContent } from '../utils/markdownContent';
+import { TimelinePage } from './TimelinePage';
+
+export interface PartInfo {
+  id: string;
+  label: string;
+}
 
 interface MarkdownRendererProps {
   /**
@@ -11,6 +19,16 @@ interface MarkdownRendererProps {
    * - or a source-relative .md path such as "src/data/chapters/kinships/elves/sun-elves.md"
    */
   path: string;
+  /** Called after the markdown renders and [data-part] anchors are found in the DOM */
+  onPartsFound?: (parts: PartInfo[]) => void;
+  /** Forwarded ref so the parent can scroll into this container */
+  contentRef?: React.RefObject<HTMLDivElement | null>;
+  /** Called when a cross-chapter link (data-go-chapter) is clicked */
+  onCrossChapterLink?: (chapterId: string, partId?: string) => void;
+  /** Full chapter tree for timeline event navigation */
+  allChapters?: Chapter[];
+  /** Standard chapter selection callback */
+  onChapterSelect?: (chapterId: string, path?: string[] | null) => void;
 }
 
 type LoadState =
@@ -18,28 +36,19 @@ type LoadState =
   | { status: 'error'; message: string }
   | { status: 'success'; text: string };
 
-const markdownModules = (import.meta as any).glob([
-  '../data/chapters/**/*.md',
-  '../data/players-handbook/**/*.md',
-  '../data/**/*.md'
-], {
-  query: '?raw',
-  import: 'default',
-});
+const markdownModules = (import.meta as any).glob(
+  ['../data/**/*.md'],
+  { query: '?raw', import: 'default' }
+);
 
 const normalizeMarkdownPath = (value: string) => {
   const trimmed = value.trim();
-
-  // Handle src/data/... paths (convert to ../data/... for glob lookup)
   if (trimmed.startsWith('src/')) {
     return `../${trimmed.slice('src/'.length)}`;
   }
-
-  // Handle already normalized paths
   if (trimmed.startsWith('../data/')) {
     return trimmed;
   }
-
   return trimmed;
 };
 
@@ -48,91 +57,235 @@ const looksLikeMarkdownFilePath = (value: string) => {
   return trimmed.endsWith('.md') && !trimmed.includes('\n');
 };
 
-const components: Components = {
-  h1: ({ children }) => (
-    <h1 className="text-4xl font-bold text-amber-300 mt-8 mb-4 leading-tight" style={{ fontFamily: "'Cinzel', serif" }}>
+// ── Helper: check if an element has a custom class from raw HTML ──────────────
+const hasCustomClass = (className?: string): boolean => {
+  return !!className && className.trim().length > 0;
+};
+
+// ── Component overrides factory ─────────────────────────────────────────────
+// Creates component overrides with access to the cross-chapter link callback.
+const createComponents = (onCrossChapterLink?: (chapterId: string, partId?: string) => void): Components => ({
+  h1: ({ children, className, ...props }) => (
+    <h1
+      className={hasCustomClass(className) ? className! : "text-4xl font-bold text-amber-300 mt-8 mb-4 leading-tight"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </h1>
   ),
-  h2: ({ children }) => (
-    <h2 className="text-3xl font-bold text-amber-300 mt-7 mb-3 leading-snug" style={{ fontFamily: "'Cinzel', serif" }}>
+  h2: ({ children, className, ...props }) => (
+    <h2
+      className={hasCustomClass(className) ? className! : "text-3xl font-bold text-amber-300 mt-7 mb-3 leading-snug"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </h2>
   ),
-  h3: ({ children }) => (
-    <h3 className="text-2xl font-semibold text-amber-400 mt-6 mb-3" style={{ fontFamily: "'Cinzel', serif" }}>
+  h3: ({ children, className, ...props }) => (
+    <h3
+      className={hasCustomClass(className) ? className! : "text-2xl font-semibold text-amber-400 mt-6 mb-3"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </h3>
   ),
-  h4: ({ children }) => (
-    <h4 className="text-xl font-semibold text-amber-400 mt-5 mb-2" style={{ fontFamily: "'Cinzel', serif" }}>
+  h4: ({ children, className, ...props }) => (
+    <h4
+      className={hasCustomClass(className) ? className! : "text-xl font-semibold text-amber-400 mt-5 mb-2"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </h4>
   ),
-  h5: ({ children }) => (
-    <h5 className="text-lg font-semibold text-amber-500 mt-4 mb-2" style={{ fontFamily: "'Cinzel', serif" }}>
+  h5: ({ children, className, ...props }) => (
+    <h5
+      className={hasCustomClass(className) ? className! : "text-lg font-semibold text-amber-500 mt-4 mb-2"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </h5>
   ),
-  h6: ({ children }) => (
-    <h6 className="text-base font-semibold text-amber-500 mt-3 mb-1" style={{ fontFamily: "'Cinzel', serif" }}>
+  h6: ({ children, className, ...props }) => (
+    <h6
+      className={hasCustomClass(className) ? className! : "text-base font-semibold text-amber-500 mt-3 mb-1"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </h6>
   ),
-  p: ({ children }) => <p className="text-amber-100 leading-relaxed mb-3">{children}</p>,
-  strong: ({ children }) => <strong className="text-amber-300 font-bold">{children}</strong>,
-  em: ({ children }) => <em className="text-amber-400 italic">{children}</em>,
-  a: ({ href, children }) => (
-    <a href={href} className="text-amber-400 underline hover:text-amber-200 transition-colors" target="_blank" rel="noopener noreferrer">
+  p: ({ children, className, ...props }) => (
+    <p className={hasCustomClass(className) ? className! : "text-amber-100 leading-relaxed mb-3"} {...props}>
       {children}
-    </a>
+    </p>
   ),
-  code: ({ children, className }) => {
+  strong: ({ children, className, ...props }) => (
+    <strong className={hasCustomClass(className) ? className! : "text-amber-300 font-bold"} {...props}>
+      {children}
+    </strong>
+  ),
+  em: ({ children, className, ...props }) => (
+    <em className={hasCustomClass(className) ? className! : "text-amber-400 italic"} {...props}>
+      {children}
+    </em>
+  ),
+  a: ({ href, children, className, ...props }: any) => {
+    const goChapter = props['data-go-chapter'];
+    const goChapterPart = props['data-go-chapter-part'];
+
+    if (goChapter && onCrossChapterLink) {
+      return (
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onCrossChapterLink(goChapter, goChapterPart || undefined);
+          }}
+          className={hasCustomClass(className) ? className! : "text-amber-400 underline hover:text-amber-200 transition-colors cursor-pointer"}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    }
+
+    return (
+      <a
+        href={href}
+        className={hasCustomClass(className) ? className! : "text-amber-400 underline hover:text-amber-200 transition-colors"}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  },
+  code: ({ children, className, ...props }) => {
     const isBlock = className?.startsWith('language-');
     if (isBlock) {
       return (
         <pre className="bg-stone-900 border border-amber-900/40 rounded-lg p-4 my-4 overflow-x-auto">
-          <code className="text-amber-200 text-sm font-mono">{children}</code>
+          <code className={`text-amber-200 text-sm font-mono ${className ?? ''}`} {...props}>{children}</code>
         </pre>
       );
     }
-    return <code className="bg-stone-800 text-amber-300 rounded px-1.5 py-0.5 text-sm font-mono">{children}</code>;
+    return (
+      <code
+        className={hasCustomClass(className) ? className! : "bg-stone-800 text-amber-300 rounded px-1.5 py-0.5 text-sm font-mono"}
+        {...props}
+      >
+        {children}
+      </code>
+    );
   },
   pre: ({ children }) => <>{children}</>,
-  ul: ({ children }) => <ul className="list-disc list-inside space-y-1 mb-3 text-amber-100 ml-4">{children}</ul>,
-  ol: ({ children }) => <ol className="list-decimal list-inside space-y-1 mb-3 text-amber-100 ml-4">{children}</ol>,
-  li: ({ children }) => <li className="text-amber-100 leading-relaxed">{children}</li>,
+  ul: ({ children, className, ...props }) => (
+    <ul className={hasCustomClass(className) ? className! : "list-disc list-inside space-y-1 mb-3 text-amber-100 ml-4"} {...props}>
+      {children}
+    </ul>
+  ),
+  ol: ({ children, className, ...props }) => (
+    <ol className={hasCustomClass(className) ? className! : "list-decimal list-inside space-y-1 mb-3 text-amber-100 ml-4"} {...props}>
+      {children}
+    </ol>
+  ),
+  li: ({ children, className, ...props }) => (
+    <li className={hasCustomClass(className) ? className! : "text-amber-100 leading-relaxed"} {...props}>
+      {children}
+    </li>
+  ),
   hr: () => <hr className="border-t-2 border-amber-800/50 my-6" />,
-  blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-amber-600 pl-4 my-4 italic text-amber-300 bg-amber-950/20 py-2 pr-2 rounded-r">
+  blockquote: ({ children, className, ...props }) => (
+    <blockquote
+      className={hasCustomClass(className) ? className! : "border-l-4 border-amber-600 pl-4 my-4 italic text-amber-300 bg-amber-950/20 py-2 pr-2 rounded-r"}
+      {...props}
+    >
       {children}
     </blockquote>
   ),
-  table: ({ children }) => (
-    <div className="overflow-x-auto my-4">
-      <table className="w-full border-collapse text-sm">{children}</table>
-    </div>
+
+  // ── Table components ─────────────────────────────────────────────────────
+  table: ({ children, className, ...props }) => {
+    if (hasCustomClass(className)) {
+      return (
+        <div className="overflow-x-auto my-4">
+          <table className={className!} {...props}>{children}</table>
+        </div>
+      );
+    }
+    return (
+      <div className="overflow-x-auto my-4">
+        <table className="w-full border-collapse text-sm" {...props}>{children}</table>
+      </div>
+    );
+  },
+  thead: ({ children, className, ...props }) => (
+    <thead className={hasCustomClass(className) ? className! : "bg-amber-900/40"} {...props}>{children}</thead>
   ),
-  thead: ({ children }) => <thead className="bg-amber-900/40">{children}</thead>,
-  tbody: ({ children }) => <tbody className="divide-y divide-amber-900/30">{children}</tbody>,
-  tr: ({ children }) => <tr className="hover:bg-amber-900/10 transition-colors">{children}</tr>,
-  th: ({ children }) => (
-    <th className="text-left text-amber-300 font-bold px-3 py-2 border-b-2 border-amber-700/50" style={{ fontFamily: "'Cinzel', serif" }}>
+  tbody: ({ children, className, ...props }) => (
+    <tbody className={hasCustomClass(className) ? className! : "divide-y divide-amber-900/30"} {...props}>{children}</tbody>
+  ),
+  tr: ({ children, className, ...props }) => (
+    <tr className={hasCustomClass(className) ? className! : "hover:bg-amber-900/10 transition-colors"} {...props}>{children}</tr>
+  ),
+  th: ({ children, className, ...props }) => (
+    <th
+      className={hasCustomClass(className) ? className! : "text-left text-amber-300 font-bold px-3 py-2 border-b-2 border-amber-700/50"}
+      style={hasCustomClass(className) ? undefined : { fontFamily: "'Cinzel', serif" }}
+      {...props}
+    >
       {children}
     </th>
   ),
-  td: ({ children }) => <td className="text-amber-100 px-3 py-2">{children}</td>,
+  td: ({ children, className, ...props }) => (
+    <td className={hasCustomClass(className) ? className! : "text-amber-100 px-3 py-2"} {...props}>{children}</td>
+  ),
+
+  // ── Generic elements ─────────────────────────────────────────────────────
   div: ({ className, children, ...props }) => (
     <div className={className ?? ''} {...props}>
       {children}
     </div>
   ),
-};
+  span: ({ className, children, ...props }) => (
+    <span className={className ?? ''} {...props}>
+      {children}
+    </span>
+  ),
+  section: ({ className, children, ...props }) => (
+    <section className={className ?? ''} {...props}>
+      {children}
+    </section>
+  ),
+});
 
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ path }) => {
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
+  path,
+  onPartsFound,
+  contentRef,
+  onCrossChapterLink,
+  allChapters = [],
+  onChapterSelect,
+}) => {
   const [state, setState] = useState<LoadState>({ status: 'loading' });
   const normalizedPath = useMemo(() => normalizeMarkdownPath(path), [path]);
+  const internalRef = useRef<HTMLDivElement>(null);
+  const divRef = (contentRef ?? internalRef) as React.RefObject<HTMLDivElement | null>;
 
+  // Memoize components so they only recreate when the callback changes
+  const components = useMemo(
+    () => createComponents(onCrossChapterLink),
+    [onCrossChapterLink]
+  );
+
+  // Load the markdown file or use inline text
   useEffect(() => {
     if (!path?.trim()) {
       setState({ status: 'error', message: 'No content provided.' });
@@ -147,10 +300,10 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ path }) => {
     const loader = markdownModules[normalizedPath] as undefined | (() => Promise<string>);
 
     if (!loader) {
-        setState({
-          status: 'error',
-          message: `Could not resolve markdown file: ${path}`,
-        });
+      setState({
+        status: 'error',
+        message: `Could not resolve markdown file: ${path}`,
+      });
       return;
     }
 
@@ -162,6 +315,40 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ path }) => {
         setState({ status: 'error', message: error.message || `Failed to load ${path}` });
       });
   }, [path, normalizedPath]);
+
+  const parsedContent = useMemo(() => {
+    if (state.status !== 'success') return null;
+    return parseMarkdownContent(state.text);
+  }, [state]);
+
+  const timelineConfig = useMemo(() => {
+    if (!parsedContent) return null;
+    return getTimelineConfig(parsedContent.frontmatter);
+  }, [parsedContent]);
+
+  // After the markdown has rendered into the DOM, find [data-part] anchors.
+  // Timeline pages do not use the in-page part navigator for now.
+  useEffect(() => {
+    if (state.status !== 'success') return;
+    if (!onPartsFound) return;
+
+    if (timelineConfig) {
+      onPartsFound([]);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      if (!divRef.current) return;
+      const elements = Array.from(divRef.current.querySelectorAll('[data-part]'));
+      const parts: PartInfo[] = elements.map((el) => ({
+        id: el.getAttribute('data-part') ?? '',
+        label: el.textContent?.trim() ?? '',
+      }));
+      onPartsFound(parts);
+    }, 80);
+
+    return () => clearTimeout(timer);
+  }, [state, onPartsFound, timelineConfig]);
 
   if (state.status === 'loading') {
     return (
@@ -179,16 +366,31 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ path }) => {
         </p>
         <p className="text-sm font-mono">{state.message}</p>
         <p className="text-xs text-red-400 mt-2">
-          Use a source-relative path like <code className="bg-red-900/30 px-1 rounded">src/data/chapters/kinships/elves/sun-elves.md</code> or pass inline markdown directly.
+          Use a source-relative path like{' '}
+          <code className="bg-red-900/30 px-1 rounded">src/data/chapters/kinships/elves/sun-elves.md</code> or pass inline markdown directly.
         </p>
       </div>
     );
   }
 
+  if (timelineConfig) {
+    return (
+      <div ref={divRef}>
+        <TimelinePage
+          config={timelineConfig}
+          allChapters={allChapters}
+          onChapterSelect={onChapterSelect}
+        />
+      </div>
+    );
+  }
+
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={components}>
-      {state.text}
-    </ReactMarkdown>
+    <div ref={divRef}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={components}>
+        {parsedContent?.body ?? state.text}
+      </ReactMarkdown>
+    </div>
   );
 };
 

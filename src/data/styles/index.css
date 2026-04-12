@@ -1,0 +1,157 @@
+/*
+  Fantasy Table Styles Collection
+  ================================
+  
+  Import all fantasy table styles for use in markdown files.
+  
+  Usage in markdown:
+  
+  ## Scroll Table (General Purpose)
+  ```html
+  <table class="scroll-table">
+    <thead>...</thead>
+    <tbody>...</tbody>
+  </table>
+  ```
+  
+  ## Monster Stat Block
+  ```html
+  <div class="monster-stat-block">
+    <h3>Ancient Red Dragon</h3>
+    <span class="monster-type">Dragon, Lawful Evil</span>
+    <!-- ... -->
+  </div>
+  ```
+  
+  ## Spell Card
+  ```html
+  <div class="spell-card">
+    <h4>Fireball</h4>
+    <div class="spell-school">Evocation</div>
+    <!-- ... -->
+  </div>
+  ```
+  
+  ## Ability Grid
+  ```html
+  <div class="ability-grid">
+    <div class="ability-score-card">
+      <div class="ability-icon">💪</div>
+      <div class="ability-name">Strength</div>
+      <div class="ability-value">18</div>
+      <!-- ... -->
+    </div>
+  </div>
+  ```
+  
+  ## Loot Table
+  ```html
+  <table class="loot-table">
+    <thead>...</thead>
+    <tbody>
+      <tr class="rare">...</tr>
+    </tbody>
+  </table>
+  ```
+  
+  ## Initiative Tracker
+  ```html
+  <table class="initiative-tracker">
+    <thead>...</thead>
+    <tbody>
+      <tr class="current-turn">...</tr>
+    </tbody>
+  </table>
+  ```
+*/
+
+/* Import all fantasy table styles */
+@import './scroll-table.css';
+@import './monster-stat-block.css';
+@import './spell-card.css';
+@import './ability-grid.css';
+@import './loot-table.css';
+@import './initiative-tracker.css';
+
+/* Global fantasy styling utilities */
+.fantasy-text {
+  font-family: 'IM Fell English', serif;
+  color: #f5deb3;
+}
+
+.fantasy-heading {
+  font-family: 'Cinzel', serif;
+  color: #ffcc66;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.fantasy-accent {
+  color: #daa520;
+  font-weight: bold;
+}
+
+.fantasy-border {
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(30, 20, 10, 0.8);
+}
+
+.fantasy-shadow {
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.fantasy-glow {
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Scroll-like decoration */
+.fantasy-scroll {
+  background: linear-gradient(135deg, rgba(253, 245, 230, 0.1) 0%, rgba(250, 240, 220, 0.05) 100%);
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  position: relative;
+  padding: 1.5rem;
+}
+
+.fantasy-scroll::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Gemstone color classes */
+.gem-ruby { color: #dc143c; }
+.gem-emerald { color: #50c878; }
+.gem-sapphire { color: #0f52ba; }
+.gem-topaz { color: #ffcc00; }
+.gem-amethyst { color: #9966cc; }
+.gem-diamond { color: #b9f2ff; }
+
+/* Metal color classes */
+.metal-gold { color: #ffd700; }
+.metal-silver { color: #c0c0c0; }
+.metal-copper { color: #b87333; }
+.metal-platinum { color: #e5e4e2; }
+.metal-bronze { color: #cd7f32; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fantasy-scroll {
+    padding: 1rem;
+  }
+  
+  .fantasy-border {
+    padding: 0.75rem;
+  }
+}

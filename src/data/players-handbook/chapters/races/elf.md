@@ -1,6 +1,8 @@
+<h2 class="header" data-part="Elf">Ortak</h2>
+
 ufak elf tanıtımı
 
-<table>
+<table class="elven-table">
     <caption>Irk Avantaj Tablosu</caption>
     <thead>
         <tr>
@@ -24,7 +26,7 @@ ufak elf tanıtımı
     </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
     <caption>Irk Dezavantaj Tablosu</caption>
     <thead>
         <tr>
@@ -48,11 +50,17 @@ ufak elf tanıtımı
     </tbody>
 </table>
 
-## High Elf
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="High Elf">High Elf</h2>
+
+<img src="./resources/races/high-elf.png" width="100%">
+
 _açıklama_
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -100,7 +108,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -118,7 +126,7 @@ _açıklama_
         <tbody>
             <tr>
                 <td>
-                    0 - 10
+                    0 - 5
                 </td>
                 <td>
                     Bebek
@@ -129,7 +137,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    11 - 50
+                    6 - 40
                 </td>
                 <td>
                     Çocuk
@@ -140,7 +148,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    51 - 100
+                    41 - 120
                 </td>
                 <td>
                     Ergen
@@ -151,7 +159,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    101 - 750
+                    121 - 300
                 </td>
                 <td>
                     Genç Yetişkin
@@ -162,7 +170,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    751 - 1400
+                    301 - 900
                 </td>
                 <td>
                     Yetişkin
@@ -173,7 +181,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    1401 - 1900
+                    901 - 1700
                 </td>
                 <td>
                     Olgun
@@ -184,7 +192,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    1900+
+                    1700+
                 </td>
                 <td>
                     Yaşlı
@@ -207,7 +215,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -220,26 +228,26 @@ _açıklama_
         <tbody>
             <tr>
                 <th>Good</th>
-                <td>***</td>
-                <td>**</td>
-                <td>*</td>
+                <td>★★★★★</td>
+                <td>★★★★</td>
+                <td>★★★</td>
             </tr>
             <tr>
                 <th>Neutral</th>
-                <td>****</td>
-                <td>***</td>
-                <td>**</td>
+                <td>★★★★</td>
+                <td>★★★</td>
+                <td>★★</td>
             </tr>
             <tr>
                 <th>Evil</th>
-                <td>*</td>
-                <td>**</td>
-                <td></td>
+                <td>★★★</td>
+                <td>★★</td>
+                <td>★</td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -257,6 +265,7 @@ _açıklama_
                     Sevgi
                 </th>
                 <td>
+                    High Elf
                 </td>
             </tr>
             <tr>
@@ -264,6 +273,7 @@ _açıklama_
                     İyi
                 </th>
                 <td>
+                    Human, Hybrid, Wood Elf, Elemental Dragonborn, Goliath
                 </td>
             </tr>
             <tr>
@@ -271,6 +281,7 @@ _açıklama_
                     Nötr
                 </th>
                 <td>
+                    Demi Human, Wyrmblood Dragonborn, Hobbit, Gnome, ???, Thorn'Gash Orc, Ex-Machina
                 </td>
             </tr>
             <tr>
@@ -278,6 +289,7 @@ _açıklama_
                     Kötü
                 </th>
                 <td>
+                    Mountain Dwarf, Iron Dwarf, Dark Dwarf, Kobold, Goblin, Ogre
                 </td>
             </tr>
             <tr>
@@ -285,12 +297,13 @@ _açıklama_
                     Nefret
                 </th>
                 <td>
+                    Dark Elf, Mor'Khal Orc, Gor'Thar Orc, Undead
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -338,7 +351,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -353,20 +366,25 @@ _açıklama_
         <tbody>
             <tr>
                 <td>
-                    ???
+                    None
                 </td>
                 <td>
-                    ???
+                    Dezavantaj yok.
                 </td>
             </tr>
         </tbody>
 </table>
 
-## Wood Elf
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Wood Elf">Wood Elf</h2>
+
+<img src="./resources/races/wood-elf.png" width="100%">
 _açıklama_
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -414,7 +432,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -432,7 +450,7 @@ _açıklama_
         <tbody>
             <tr>
                 <td>
-                    0 - 10
+                    0 - 5
                 </td>
                 <td>
                     Bebek
@@ -443,7 +461,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    11 - 50
+                    6 - 30
                 </td>
                 <td>
                     Çocuk
@@ -454,7 +472,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    51 - 100
+                    31 - 90
                 </td>
                 <td>
                     Ergen
@@ -465,7 +483,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    101 - 400
+                    91 - 220
                 </td>
                 <td>
                     Genç Yetişkin
@@ -476,7 +494,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    401 - 800
+                    221 - 650
                 </td>
                 <td>
                     Yetişkin
@@ -487,7 +505,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    801 - 1000
+                    651 - 1200
                 </td>
                 <td>
                     Olgun
@@ -498,7 +516,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    1000+
+                    1200+
                 </td>
                 <td>
                     Yaşlı
@@ -521,7 +539,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -544,13 +562,13 @@ _açıklama_
                     Good
                 </th>
                 <td>
-                    ***
+                    ★★★
                 </td>
                 <td>
-                    ****
+                    ★★★★★
                 </td>
                 <td>
-                    **
+                    ★★★★
                 </td>
             </tr>
             <tr>
@@ -558,13 +576,13 @@ _açıklama_
                     Neutral
                 </th>
                 <td>
-                    **
+                    ★★
                 </td>
                 <td>
-                    ***
+                    ★★★★
                 </td>
                 <td>
-                    *
+                    ★★★
                 </td>
             </tr>
             <tr>
@@ -572,18 +590,19 @@ _açıklama_
                     Evil
                 </th>
                 <td>
-                    *
+                    ★
                 </td>
                 <td>
-                    **
+                    ★★★
                 </td>
                 <td>
+                    ★★
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -601,6 +620,7 @@ _açıklama_
                     Sevgi
                 </th>
                 <td>
+                    Wood Elf
                 </td>
             </tr>
             <tr>
@@ -608,6 +628,7 @@ _açıklama_
                     İyi
                 </th>
                 <td>
+                    Human, Hybrid, Demi Human, High Elf, Elemental Dragonborn, Wyrmblood Dragonborn, Goliath, Thorn'Gash Orc
                 </td>
             </tr>
             <tr>
@@ -615,6 +636,7 @@ _açıklama_
                     Nötr
                 </th>
                 <td>
+                    Dark Elf, Mountain Dwarf, Iron Dwarf, Dark Dwarf, Kobold, Hobbit, Gnome, Ogre, ???, Ex-Machina
                 </td>
             </tr>
             <tr>
@@ -622,6 +644,7 @@ _açıklama_
                     Kötü
                 </th>
                 <td>
+                    Goblin, Mor'Khal Orc, Gor'Thar Orc
                 </td>
             </tr>
             <tr>
@@ -629,12 +652,13 @@ _açıklama_
                     Nefret
                 </th>
                 <td>
+                    Undead
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -657,7 +681,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    ???
+                    Nature Strider
                 </td>
                 <td>
                     Çoğu arazilerin dezavantajlarından etkilenmez ve +1 Movement AP.
@@ -682,7 +706,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -697,20 +721,25 @@ _açıklama_
         <tbody>
             <tr>
                 <td>
-                    ???
+                    None
                 </td>
                 <td>
-                    ???
+                    Dezavantaj yok.
                 </td>
             </tr>
         </tbody>
 </table>
 
-## Dark Elf
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Dark Elf">Dark Elf</h2>
+
+<img src="./resources/races/dark-elf.png" width="100%">
 _açıklama_
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -758,7 +787,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -776,7 +805,7 @@ _açıklama_
         <tbody>
             <tr>
                 <td>
-                    0 - 10
+                    0 - 5
                 </td>
                 <td>
                     Bebek
@@ -787,7 +816,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    11 - 50
+                    6 - 30
                 </td>
                 <td>
                     Çocuk
@@ -798,7 +827,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    51 - 100
+                    31 - 90
                 </td>
                 <td>
                     Ergen
@@ -809,7 +838,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    101 - 400
+                    91 - 220
                 </td>
                 <td>
                     Genç Yetişkin
@@ -820,7 +849,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    401 - 800
+                    221 - 650
                 </td>
                 <td>
                     Yetişkin
@@ -831,7 +860,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    801 - 1000
+                    651 - 1200
                 </td>
                 <td>
                     Olgun
@@ -842,7 +871,7 @@ _açıklama_
             </tr>
             <tr>
                 <td>
-                    1000+
+                    1200+
                 </td>
                 <td>
                     Yaşlı
@@ -865,7 +894,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -888,12 +917,13 @@ _açıklama_
                     Good
                 </th>
                 <td>
+                    ★
                 </td>
                 <td>
-                    *
+                    ★★
                 </td>
                 <td>
-                    **
+                    ★★★
                 </td>
             </tr>
             <tr>
@@ -901,13 +931,13 @@ _açıklama_
                     Neutral
                 </th>
                 <td>
-                    *
+                    ★★★
                 </td>
                 <td>
-                    **
+                    ★★★★
                 </td>
                 <td>
-                    ***
+                    ★★★★★
                 </td>
             </tr>
             <tr>
@@ -915,19 +945,19 @@ _açıklama_
                     Evil
                 </th>
                 <td>
-                    **
+                    ★★
                 </td>
                 <td>
-                    ***
+                    ★★★
                 </td>
                 <td>
-                    ****
+                    ★★★★
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -945,6 +975,7 @@ _açıklama_
                     Sevgi
                 </th>
                 <td>
+                    Dark Elf
                 </td>
             </tr>
             <tr>
@@ -952,6 +983,7 @@ _açıklama_
                     İyi
                 </th>
                 <td>
+                    Elemental Dragonborn, Wyrmblood Dragonborn, Goliath, Mor'Khal Orc
                 </td>
             </tr>
             <tr>
@@ -959,6 +991,7 @@ _açıklama_
                     Nötr
                 </th>
                 <td>
+                    Human, Hybrid, Demi Human, Wood Elf, Kobold, ???, Thorn'Gash Orc, Ex-Machina, Undead
                 </td>
             </tr>
             <tr>
@@ -966,6 +999,7 @@ _açıklama_
                     Kötü
                 </th>
                 <td>
+                    Hobbit, Gnome, Ogre, Gor'Thar Orc
                 </td>
             </tr>
             <tr>
@@ -973,12 +1007,13 @@ _açıklama_
                     Nefret
                 </th>
                 <td>
+                    High Elf, Mountain Dwarf, Iron Dwarf, Dark Dwarf, Goblin
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -996,7 +1031,7 @@ _açıklama_
                     Darkvision
                 </td>
                 <td>
-                    Darkvision cantrip'i ile başlar.
+                    Karanlıkta görebilir.
                 </td>
             </tr>
             <tr>
@@ -1018,7 +1053,7 @@ _açıklama_
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="elven-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>

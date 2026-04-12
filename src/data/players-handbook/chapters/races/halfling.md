@@ -1,6 +1,8 @@
+<h2 class="header" data-part="Halfling">Ortak</h2>
+
 ufak main ırk tanıtımı
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
     <caption>Irk Avantaj Tablosu</caption>
     <thead>
         <tr>
@@ -32,7 +34,7 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
     <caption>Irk Dezavantaj Tablosu</caption>
     <thead>
         <tr>
@@ -56,11 +58,17 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-## Hobbit
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Hobbit">Hobbit</h2>
+
+<img src="worlds/test.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -108,7 +116,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -215,7 +223,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -277,7 +285,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -328,7 +336,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -376,7 +384,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -400,11 +408,17 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## Gnome
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Gnome">Gnome</h2>
+
+<img src="worlds/test.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -452,7 +466,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -559,7 +573,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -621,7 +635,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -672,7 +686,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -720,7 +734,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -744,11 +758,17 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## Goblin
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Goblin">Goblin</h2>
+
+<img src="worlds/test.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -796,7 +816,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -903,7 +923,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -965,7 +985,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -1016,7 +1036,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -1064,7 +1084,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="hobbit-hoard-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>

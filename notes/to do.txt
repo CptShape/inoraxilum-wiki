@@ -39,3 +39,8 @@ base economy kuralı ve çoğu item için base fiyat tablosu
 
 
 races/orc da druid ırkı yapılacak
+
+
+RACES
+Dragonborn'da subırkların dragon güçleri tabloları yapılacak.
+hobbit özellikler ve fotolarda kaldım

@@ -1,0 +1,54 @@
+.header {
+  position: relative;
+  text-align: center;
+  font-family: "Cinzel", serif; /* fantasy hissi */
+  font-size: 2.5rem;
+  color: #e6d8a7; /* altın tonu */
+  margin: 60px 0;
+  letter-spacing: 2px;
+}
+
+/* ÜST ÇİZGİ */
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  height: 2px;
+  transform: translateX(-50%);
+  
+  background: linear-gradient(
+    to right,
+    transparent,
+    #c9a94d,
+    #f5e6a3,
+    #c9a94d,
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(255, 215, 100, 0.5);
+
+  max-width: 200%;
+}
+
+/* üst */
+.header::before {
+  top: -15px;
+}
+
+/* alt */
+.header::after {
+  bottom: -15px;
+}
+
+/* küçük süs efekti */
+.header span {
+  position: relative;
+}
+
+.header span::before,
+.header span::after {
+  content: "✦";
+  margin: 0 10px;
+  color: #d4af37;
+}

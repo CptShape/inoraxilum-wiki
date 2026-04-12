@@ -109,3 +109,27 @@
   margin: 1.25rem 0;
   color: #a5f3fc;
 }
+
+/* ── Info Box ── <div class="info-box"> */
+.info-box {
+  background-color: rgba(14, 116, 144, 0.15);
+  border: 1px solid rgba(8, 145, 178, 0.3);
+  border-left: 4px solid #0891b2;
+  border-radius: 0.375rem;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  color: #a5f3fc;
+}
+
+/* ── Timeline Utilities ── */
+.timeline-event-card {
+  will-change: transform;
+}
+
+.timeline-event-card:hover {
+  filter: brightness(1.06);
+}
+
+.timeline-range-bracket {
+  backdrop-filter: blur(4px);
+}

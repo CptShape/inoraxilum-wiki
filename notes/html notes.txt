@@ -1,5 +1,6 @@
+Base table
 <table class="tableRow">
-        <caption>Irk Avantaj Tablosu</caption>
+        <caption>Tablo</caption>
         <tbody>
             <tr>
                 <th colspan="1">.</th>
@@ -8,8 +9,12 @@
         </tbody>
 </table>
 
-<div class="bottom-nav">
-  <a class="btn" href="../">⬅️ .</a>
-  <a class="btn" href="../">Codex</a>
-  <a class="btn" href="../">. ➡️</a>
-</div>
+
+
+chapter , part linkleme
+<a href="#" data-go-chapter="bard" data-go-chapter-part="Glamour">Bard glamour</a>
+
+
+
+chapter part oluşturma
+<a data-part="Bard">The bard</a>

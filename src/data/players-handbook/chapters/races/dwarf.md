@@ -1,6 +1,8 @@
+<h2 class="header" data-part="Elf">Ortak</h2>
+
 ufak main ırk tanıtımı
 
-<table class="tableRow">
+<table class="dwarven-table">
     <caption>Irk Avantaj Tablosu</caption>
     <thead>
         <tr>
@@ -48,7 +50,7 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
     <caption>Irk Dezavantaj Tablosu</caption>
     <thead>
         <tr>
@@ -72,347 +74,17 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-## Hill Dwarf
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Mountain Dwarf">Mountain Dwarf</h2>
+
+<img src="./resources/races/mountain-dwarf.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
-        <caption>Özellik Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Özellik Adı
-                </th>
-                <th>
-                    Özellik
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Base HP
-                </td>
-                <td>
-                    180
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Size
-                </td>
-                <td>
-                    Medium
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Speed
-                </td>
-                <td>
-                    7
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Languages
-                </td>
-                <td>
-                    Common, Dwarfish
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="tableRow">
-        <caption>Yaş Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Yaş
-                </th>
-                <th>
-                    Aşama
-                </th>
-                <th>
-                    Açıklama
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    0 - 3
-                </td>
-                <td>
-                    Bebek
-                </td>
-                <td>
-                    Fiziksel ve zihinsel gelişim başlangıcı
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    4 - 18
-                </td>
-                <td>
-                    Çocuk
-                </td>
-                <td>
-                    Temel öğrenme dönemi
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    19 - 30
-                </td>
-                <td>
-                    Ergen
-                </td>
-                <td>
-                    Fiziksel değişim, kimlik oluşumu
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    31 - 100
-                </td>
-                <td>
-                    Genç Yetişkin
-                </td>
-                <td>
-                    Fiziksel zirve başlangıcı
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    101 - 250
-                </td>
-                <td>
-                    Yetişkin
-                </td>
-                <td>
-                    Dengeli dönem
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    251 - 500
-                </td>
-                <td>
-                    Olgun
-                </td>
-                <td>
-                    Tecrübe yüksek, fiziksel düşüş başlangıcı
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    501+
-                </td>
-                <td>
-                    Yaşlı
-                </td>
-                <td>
-                    Fiziksel zayıflık, zihinsel düşüş başlangıcı
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    800
-                </td>
-                <td>
-                    Ortalama Ömür
-                </td>
-                <td>
-                    Ortalama ömür sonu
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="tableRow">
-        <caption>Ahlak Tablosu</caption>
-        <thead>
-            <tr>
-                <th> 
-                </th>
-                <th>
-                    Lawful
-                </th>
-                <th>
-                    Neutral
-                </th>
-                <th>
-                    Chaotic
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    Good
-                </th>
-                <td>
-                ***
-                </td>
-                <td>
-                **
-                </td>
-                <td>
-                *
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Neutral
-                </th>
-                <td>
-                ****
-                </td>
-                <td>
-                ***
-                </td>
-                <td>
-                **
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Evil
-                </th>
-                <td>
-                **
-                </td>
-                <td>
-                *
-                </td>
-                <td>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-<table class="tableRow">
-        <caption>Önyargı Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Önyargı
-                </th>
-                <th>
-                    Irk
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    Sevgi
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    İyi
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Nötr
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Kötü
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Nefret
-                </th>
-                <td>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-<table class="tableRow">
-        <caption>Irk Avantaj Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Avantaj
-                </th>
-                <th>
-                    Açıklama
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Great Constitution
-                </td>
-                <td>
-                    +4 CON
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Armor Proficiency
-                </td>
-                <td>
-                    Bir tane armor proficiency seç.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    CON Skill Expertise
-                </td>
-                <td>
-                    Bir tane CON Skill'de Expertise seç.
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="tableRow">
-        <caption>Irk Dezavantaj Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Avantaj
-                </th>
-                <th>
-                    Açıklama
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    ???
-                </td>
-                <td>
-                    ???
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-## Mountain Dwarf
-<img src="worlds/test.png" width="300">
-*açıklama*
-
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -460,7 +132,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -478,7 +150,7 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    0 - 3
+                    0 - 5
                 </td>
                 <td>
                     Bebek
@@ -489,7 +161,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    4 - 18
+                    6 - 30
                 </td>
                 <td>
                     Çocuk
@@ -500,7 +172,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    19 - 30
+                    31 - 70
                 </td>
                 <td>
                     Ergen
@@ -511,7 +183,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    31 - 100
+                    71 - 150
                 </td>
                 <td>
                     Genç Yetişkin
@@ -522,7 +194,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    101 - 250
+                    151 - 450
                 </td>
                 <td>
                     Yetişkin
@@ -533,7 +205,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    251 - 500
+                    451 - 650
                 </td>
                 <td>
                     Olgun
@@ -544,7 +216,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    501+
+                    650+
                 </td>
                 <td>
                     Yaşlı
@@ -567,7 +239,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -590,13 +262,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
-                ****
+                ★★★
                 </td>
                 <td>
-                ***
+                ★★★★
                 </td>
                 <td>
-                **
+                ★★★★★
                 </td>
             </tr>
             <tr>
@@ -604,13 +276,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                ***
+                ★★
                 </td>
                 <td>
-                **
+                ★★★
                 </td>
                 <td>
-                *
+                ★★★★
                 </td>
             </tr>
             <tr>
@@ -618,18 +290,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                **
+                ★
                 </td>
                 <td>
-                *
+                ★★
                 </td>
                 <td>
+                ★★★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -680,7 +353,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -722,18 +395,18 @@ ufak main ırk tanıtımı
                     Hard Hands
                 </td>
                 <td>
-                    Armorsuz iken yakın mesafe saldırılarının kritik olma ihtimali +%15
+                    Armorsuz iken yakın mesafe saldırılarının kritik olması için gereken zar 2 azalır.
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama
@@ -752,11 +425,359 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## Dark Dwarf (Duergar)
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Iron Dwarf">Iron Dwarf</h2>
+
+<img src="./resources/races/iron-dwarf.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="dwarven-table">
+        <caption>Özellik Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Özellik Adı
+                </th>
+                <th>
+                    Özellik
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Base HP
+                </td>
+                <td>
+                    180
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Size
+                </td>
+                <td>
+                    Medium
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Speed
+                </td>
+                <td>
+                    7
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Languages
+                </td>
+                <td>
+                    Common, Dwarfish
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="dwarven-table">
+        <caption>Yaş Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Yaş
+                </th>
+                <th>
+                    Aşama
+                </th>
+                <th>
+                    Açıklama
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    0 - 5
+                </td>
+                <td>
+                    Bebek
+                </td>
+                <td>
+                    Fiziksel ve zihinsel gelişim başlangıcı
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    6 - 35
+                </td>
+                <td>
+                    Çocuk
+                </td>
+                <td>
+                    Temel öğrenme dönemi
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    36 - 80
+                </td>
+                <td>
+                    Ergen
+                </td>
+                <td>
+                    Fiziksel değişim, kimlik oluşumu
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    81 - 180
+                </td>
+                <td>
+                    Genç Yetişkin
+                </td>
+                <td>
+                    Fiziksel zirve başlangıcı
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    181 - 600
+                </td>
+                <td>
+                    Yetişkin
+                </td>
+                <td>
+                    Dengeli dönem
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    601 - 850
+                </td>
+                <td>
+                    Olgun
+                </td>
+                <td>
+                    Tecrübe yüksek, fiziksel düşüş başlangıcı
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    850+
+                </td>
+                <td>
+                    Yaşlı
+                </td>
+                <td>
+                    Fiziksel zayıflık, zihinsel düşüş başlangıcı
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1000
+                </td>
+                <td>
+                    Ortalama Ömür
+                </td>
+                <td>
+                    Ortalama ömür sonu
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="dwarven-table">
+        <caption>Ahlak Tablosu</caption>
+        <thead>
+            <tr>
+                <th> 
+                </th>
+                <th>
+                    Lawful
+                </th>
+                <th>
+                    Neutral
+                </th>
+                <th>
+                    Chaotic
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    Good
+                </th>
+                <td>
+                ★★★★
+                </td>
+                <td>
+                ★★★
+                </td>
+                <td>
+                ★★
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Neutral
+                </th>
+                <td>
+                ★★★★★
+                </td>
+                <td>
+                ★★★★
+                </td>
+                <td>
+                ★★★
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Evil
+                </th>
+                <td>
+                ★★★
+                </td>
+                <td>
+                ★★
+                </td>
+                <td>
+                ★
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<table class="dwarven-table">
+        <caption>Önyargı Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Önyargı
+                </th>
+                <th>
+                    Irk
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    Sevgi
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    İyi
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nötr
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Kötü
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nefret
+                </th>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<table class="dwarven-table">
+        <caption>Irk Avantaj Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Avantaj
+                </th>
+                <th>
+                    Açıklama
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Great Constitution
+                </td>
+                <td>
+                    +4 CON
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Armor Proficiency
+                </td>
+                <td>
+                    Bir tane armor proficiency seç.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CON Skill Expertise
+                </td>
+                <td>
+                    Bir tane CON Skill'de Expertise seç.
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="dwarven-table">
+        <caption>Irk Dezavantaj Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Dezavantaj
+                </th>
+                <th>
+                    Açıklama
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    ???
+                </td>
+                <td>
+                    ???
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+
+
+
+
+<h2 class="header" data-part="Dark Dwarf">Dark Dwarf (Duergar)</h2>
+
+<img src="./resources/races/dark-dwarf.png" width="100%">
+*açıklama*
+
+<table class="dwarven-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -804,7 +825,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -822,7 +843,7 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    0 - 3
+                    0 - 5
                 </td>
                 <td>
                     Bebek
@@ -833,7 +854,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    4 - 20
+                    6 - 25
                 </td>
                 <td>
                     Çocuk
@@ -844,7 +865,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    21 - 40
+                    26 - 70
                 </td>
                 <td>
                     Ergen
@@ -855,7 +876,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    41 - 140
+                    71 - 160
                 </td>
                 <td>
                     Genç Yetişkin
@@ -866,7 +887,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    141 - 300
+                    161 - 550
                 </td>
                 <td>
                     Yetişkin
@@ -877,7 +898,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    301 - 700
+                    551 - 800
                 </td>
                 <td>
                     Olgun
@@ -888,7 +909,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    701+
+                    800+
                 </td>
                 <td>
                     Yaşlı
@@ -911,7 +932,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -934,12 +955,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
+                ★
                 </td>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                *
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -947,13 +969,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                **
+                ★★★
                 </td>
                 <td>
-                ****
+                ★★★★
                 </td>
                 <td>
-                ***
+                ★★★★★
                 </td>
             </tr>
             <tr>
@@ -961,19 +983,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                *
+                ★★
                 </td>
                 <td>
-                ***
+                ★★★
                 </td>
                 <td>
-                **
+                ★★★★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -1024,7 +1046,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -1050,7 +1072,7 @@ ufak main ırk tanıtımı
                     Darkvision
                 </td>
                 <td>
-                    Darkvision cantrip'i ile başlar.
+                    Karanlıkta görebilir.
                 </td>
             </tr>
             <tr>
@@ -1064,12 +1086,12 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="dwarven-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama

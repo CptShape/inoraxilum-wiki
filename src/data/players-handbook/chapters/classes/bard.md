@@ -1,5 +1,6 @@
-Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.
 
+Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds.
+<a data-part="Bard">The bard</a> is a master of song, speech, and the magic they contain.
 
 
 <table class="tableRow">
@@ -236,7 +237,7 @@ Herhangi classdan 2 büyü seç.
 
 ## Subclass (Bard Calling)
 
-### Glamour
+<h3 data-part="Glamour">Glamour</h3>
 
 cazibe
 
@@ -350,7 +351,7 @@ Persuasion veya Deception zar sonucunu beğenmezsen 10'a çevirebilirsin.
 
 
 
-### Valor
+<h3 data-part="Valor">Valor</h3>
 
 cesaret
 
@@ -451,7 +452,7 @@ Battle Magic: Bard büyüsü kullandıktan sonra silahlı saldırı gerçekleşt
 
 
 
-### Lore
+<h3 data-part="Lore">Lore</h3>
 
 öğreti ve efsaneler/hikayeler peşinde
 
@@ -549,7 +550,7 @@ Spirit Song: Ruhları ilüzyon olarak summonlayabilirsin. Efsanevi figürler dah
 
 
 
-### Whispers
+<h3 data-part="Whispers">Whispers</h3>
 
 secret açığa çıkarma ve tehdit etme, parazit
 
@@ -633,7 +634,7 @@ Shadow Lore: Hedefin kulağına fısıldarsın, onun en derin sırrını fısıl
 
 
 
-### Creation
+<h3 data-part="Creation">Creation</h3>
 
 Song of Creation
 

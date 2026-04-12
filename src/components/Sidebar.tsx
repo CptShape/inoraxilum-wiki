@@ -7,9 +7,10 @@ interface SidebarProps {
   chapters: Chapter[];
   activeChapterId: string | null;
   expandedChapters: Set<string>;
-  onChapterSelect: (chapterId: string, path: string[]) => void;
+  onChapterSelect: (chapterId: string, path?: string[] | null) => void;
   onToggleExpand: (chapterId: string) => void;
   onGetMarkdown: () => void;
+  onClearSelection?: () => void;
   breadcrumb: string[];
 }
 
@@ -20,18 +21,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onChapterSelect,
   onToggleExpand,
   onGetMarkdown,
+  onClearSelection,
   breadcrumb,
 }) => {
   return (
     <div className="w-80 bg-stone-900/70 border-r-2 border-amber-800 p-6 shadow-xl shadow-black/30 backdrop-blur-sm overflow-y-auto flex flex-col">
       {/* Header */}
       <div className="text-center mb-6 pb-6 border-b border-amber-800/50">
-        <div className="flex items-center justify-center mb-3">
-          <BookOpen className="w-10 h-10 text-amber-400 mr-2" />
-          <h1 className="text-2xl font-bold text-amber-400" style={{ fontFamily: "'Cinzel', serif" }}>
+        <button
+          onClick={onClearSelection}
+          className="flex items-center justify-center mb-3 w-full group cursor-pointer"
+        >
+          <BookOpen className="w-10 h-10 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors" />
+          <h1 className="text-2xl font-bold text-amber-400 group-hover:text-amber-300 transition-colors" style={{ fontFamily: "'Cinzel', serif" }}>
             Eldritch Grimoire
           </h1>
-        </div>
+        </button>
         <p className="text-amber-600 italic text-sm" style={{ fontFamily: "'IM Fell English', serif" }}>
           Fantasy Rulebook System
         </p>

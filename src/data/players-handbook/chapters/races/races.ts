@@ -17,7 +17,7 @@ export const racesChapter: Chapter = {
   subtitle: 'The Peoples of the Realm',
   icon: '👥',
   content: 'src/data/players-handbook/chapters/races/races.md',
-  subChapters: [raceElf, raceDwarf, raceHuman, raceDragonborn, raceOgre, raceOrc, raceUndead, raceExmachina, raceGoliath, raceHalfling],
+  subChapters: [raceHuman, raceElf, raceDwarf, raceDragonborn, raceHalfling, raceGoliath, raceExmachina, raceOrc, raceOgre, raceUndead],
 };
 
 export { raceElf, raceDwarf, raceHuman, raceDragonborn, raceOgre, raceOrc, raceUndead, raceExmachina, raceGoliath, raceHalfling };

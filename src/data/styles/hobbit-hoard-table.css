@@ -1,0 +1,198 @@
+/* Hobbit Hoard Table - Golden treasure vault with coin motifs */
+.hobbit-hoard-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background:
+    radial-gradient(ellipse at 25% 15%, #3d2b10 0%, #2a1d0a 40%, #1a1208 100%);
+  border: 3px solid #8b6914;
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 1px #c9a84c,
+    0 0 0 4px #5a4510,
+    0 0 0 5px #c9a84c,
+    0 0 50px rgba(255, 215, 0, 0.2),
+    inset 0 0 60px rgba(139, 105, 20, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-family: 'IM Fell English', serif;
+  color: #f5deb3;
+}
+
+/* Gold shimmer overlay */
+.hobbit-hoard-table::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.06) 0%, transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(255, 215, 0, 0.06) 0%, transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(255, 200, 60, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  animation: hoard-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes hoard-shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.hobbit-hoard-table caption {
+  margin-top: 8px;
+}
+
+/* Top gold bar */
+.hobbit-hoard-table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    #8b6914,
+    #ffd700 20%,
+    #fff8dc 40%,
+    #ffd700 60%,
+    #daa520 80%,
+    #8b6914);
+  box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.6),
+    0 2px 8px rgba(255, 215, 0, 0.3);
+  z-index: 2;
+}
+
+.hobbit-hoard-table thead {
+  background: linear-gradient(180deg, #5a4510 0%, #3d2b10 100%);
+  position: relative;
+}
+
+.hobbit-hoard-table thead::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffd700, #daa520, #ffd700, transparent);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.hobbit-hoard-table th {
+  padding: 16px 40px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffd700;
+  text-shadow:
+    0 0 8px rgba(255, 215, 0, 0.5),
+    0 1px 2px rgba(0, 0, 0, 0.8);
+  position: relative;
+  border-bottom: 2px solid #8b6914;
+}
+
+/* Coin ornaments in header corners */
+.hobbit-hoard-table th:first-child::before {
+  content: '🪙';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+  margin-right: 10px;
+}
+
+.hobbit-hoard-table th:last-child::before {
+  content: '🪙';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+}
+
+.hobbit-hoard-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(139, 105, 20, 0.35);
+  position: relative;
+  font-weight: 400;
+  background: rgba(26, 18, 8, 0.7);
+  transition: all 0.3s ease;
+}
+
+.hobbit-hoard-table tbody tr:nth-child(even) td {
+  background: rgba(35, 24, 10, 0.8);
+}
+
+/* Gold coin bullet in first column */
+.hobbit-hoard-table td:first-child {
+  font-weight: 700;
+  color: #ffd700;
+  text-align: center;
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+  position: relative;
+  padding-left: 30px;
+}
+
+.hobbit-hoard-table td:first-child::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 35% 35%, #fff8dc, #ffd700 40%, #daa520 70%, #8b6914);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow:
+    0 0 4px rgba(255, 215, 0, 0.6),
+    inset 0 -1px 2px rgba(139, 105, 20, 0.5);
+  border: 1px solid #8b6914;
+}
+
+/* Hover: golden glow sweep */
+.hobbit-hoard-table tbody tr:hover td {
+  background: rgba(60, 43, 16, 0.9);
+  box-shadow: inset 4px 0 0 #ffd700, inset 4px 0 12px rgba(255, 215, 0, 0.3);
+  color: #fff8dc;
+}
+
+/* Gold sparkle divider between rows */
+.hobbit-hoard-table tbody tr:not(:last-child) td::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 215, 0, 0.15) 20%,
+    rgba(255, 215, 0, 0.35) 50%,
+    rgba(255, 215, 0, 0.15) 80%,
+    transparent);
+}
+
+.hobbit-hoard-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Bottom treasure border */
+.hobbit-hoard-table tbody tr:last-child td::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    #8b6914,
+    #ffd700 30%,
+    #fff8dc 50%,
+    #ffd700 70%,
+    #8b6914);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}

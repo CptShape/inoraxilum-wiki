@@ -1,0 +1,128 @@
+/* Dwarven Table - Hewn stone with metallic rivets and engraved borders */
+.dwarven-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  background: 
+    linear-gradient(135deg, #3d342a 0%, #2a241d 100%),
+    repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px);
+  padding: 8px;
+  border: 4px solid #1a1611;
+  box-shadow: 
+    inset 0 0 0 2px #5a4a3a,
+    inset 0 0 0 4px #3d342a,
+    0 6px 20px rgba(0, 0, 0, 0.7),
+    0 0 0 1px #8b7355;
+  position: relative;
+  font-family: 'IM Fell English', serif;
+  color: #d4c4b0;
+}
+
+.dwarven-table caption {
+  margin-top: 13px;
+}
+
+.dwarven-table::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #5a4a3a;
+  pointer-events: none;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Rivet corners */
+.dwarven-table::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 12px 12px, #8b7355 0%, #6b5a45 3px, #3d342a 4px, transparent 4px),
+    radial-gradient(circle at calc(100% - 12px) 12px, #8b7355 0%, #6b5a45 3px, #3d342a 4px, transparent 4px),
+    radial-gradient(circle at 12px calc(100% - 12px), #8b7355 0%, #6b5a45 3px, #3d342a 4px, transparent 4px),
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), #8b7355 0%, #6b5a45 3px, #3d342a 4px, transparent 4px);
+  pointer-events: none;
+}
+
+.dwarven-table thead {
+  background: linear-gradient(180deg, #4a3f34 0%, #3d342a 100%);
+}
+
+.dwarven-table th {
+  padding: 16px 18px;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #e8d8c0;
+  text-shadow: 2px 2px 0 #1a1611, 0 0 2px rgba(212, 196, 176, 0.5);
+  background: #3d342a;
+  border: 2px solid #1a1611;
+  box-shadow: 
+    inset 0 2px 0 #5a4a3a,
+    inset 0 -2px 0 #2a241d,
+    0 2px 4px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.dwarven-table th::before,
+.dwarven-table th::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #a0826d 0%, #8b7355 40%, #5a4a3a 100%);
+  border: 1px solid #1a1611;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.2);
+}
+
+.dwarven-table th::before { left: 6px; }
+.dwarven-table th::after { right: 6px; }
+
+.dwarven-table td {
+  padding: 13px 18px;
+  background: #2f2922;
+  border: 1px solid #1a1611;
+  box-shadow: inset 0 1px 0 #3d342a, inset 0 -1px 0 #221e19;
+  position: relative;
+  font-weight: 500;
+}
+
+.dwarven-table tbody tr:nth-child(even) td {
+  background: #2a241d;
+}
+
+.dwarven-table tbody tr:hover td {
+  background: #3a3128;
+  color: #f0e0c8;
+  box-shadow: 
+    inset 0 1px 0 #4a3f34, 
+    inset 0 -1px 0 #2a241d,
+    inset 3px 0 0 #d4a574;
+}
+
+/* Engraved lines between rows */
+.dwarven-table tbody tr:not(:last-child) td::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8b7355 20%, #5a4a3a 50%, #8b7355 80%, transparent);
+  opacity: 0.4;
+}
+
+/* Chiseled number column */
+.dwarven-table td:first-child {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-align: center;
+  color: #b8a082;
+  text-shadow: 1px 1px 0 #1a1611;
+  background: linear-gradient(135deg, #2a241d 0%, #221e19 100%);
+}

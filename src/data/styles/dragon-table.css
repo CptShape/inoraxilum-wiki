@@ -1,0 +1,184 @@
+/* Dragon Table - Molten gold on obsidian with ember glow */
+.dragon-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: 
+    radial-gradient(ellipse at 30% 20%, #1a0f0a 0%, #0a0503 70%, #000 100%);
+  border: 3px solid #3a2518;
+  border-radius: 2px;
+  box-shadow: 
+    0 0 0 1px #8b4513,
+    0 0 40px rgba(255, 69, 0, 0.25),
+    inset 0 0 80px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 140, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Cinzel', serif;
+  color: #ffd8a0;
+}
+
+.dragon-table::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(139, 69, 19, 0.03) 30px, rgba(139, 69, 19, 0.03) 31px),
+    radial-gradient(ellipse at 70% 30%, rgba(255, 69, 0, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Ember particles */
+.dragon-table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(255, 140, 0, 0.8) 20%,
+    rgba(255, 200, 80, 1) 50%,
+    rgba(255, 140, 0, 0.8) 80%,
+    transparent);
+  box-shadow: 
+    0 0 15px rgba(255, 140, 0, 0.8),
+    0 0 30px rgba(255, 69, 0, 0.4);
+  animation: ember-flicker 3s ease-in-out infinite;
+}
+
+@keyframes ember-flicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.dragon-table thead {
+  background: linear-gradient(180deg, #5c2a0f 0%, #3a1a08 100%);
+  position: relative;
+}
+
+.dragon-table thead::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+  border-bottom: 2px solid #8b4513;
+}
+
+.dragon-table th {
+  padding: 18px 22px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffebc0;
+  text-shadow: 
+    0 0 10px rgba(255, 140, 0, 0.8),
+    0 2px 0 #1a0f0a,
+    0 0 20px rgba(255, 69, 0, 0.5);
+  position: relative;
+  border-bottom: 3px solid #8b4513;
+}
+
+/* Dragon scale pattern on header */
+.dragon-table th::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 200, 100, 0.08) 0%, transparent 8%),
+    radial-gradient(circle at 50% 50%, rgba(255, 200, 100, 0.08) 0%, transparent 8%),
+    radial-gradient(circle at 80% 50%, rgba(255, 200, 100, 0.08) 0%, transparent 8%);
+  pointer-events: none;
+}
+
+/* Corner flame ornaments */
+.dragon-table th:first-child::before,
+.dragon-table th:last-child::before {
+  content: '▲';
+  position: absolute;
+  top: 6px;
+  font-size: 0.7rem;
+  color: #ff8c00;
+  text-shadow: 0 0 8px #ff4500;
+}
+.dragon-table th:first-child::before { left: 8px; }
+.dragon-table th:last-child::before { right: 8px; }
+
+.dragon-table td {
+  padding: 15px 22px;
+  border-bottom: 1px solid rgba(139, 69, 19, 0.4);
+  position: relative;
+  font-weight: 500;
+  background: rgba(20, 10, 5, 0.6);
+  transition: all 0.3s ease;
+}
+
+.dragon-table tbody tr:nth-child(even) td {
+  background: rgba(15, 8, 4, 0.7);
+}
+
+/* Glowing left border on hover */
+.dragon-table tbody tr:hover td {
+  background: rgba(40, 20, 10, 0.8);
+  box-shadow: inset 4px 0 0 #ff8c00, inset 4px 0 12px rgba(255, 140, 0, 0.4);
+  color: #fff0d0;
+}
+
+/* Molten divider */
+.dragon-table tbody tr:not(:last-child) td::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 15px;
+  right: 15px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(139, 69, 19, 0) 10%,
+    rgba(255, 140, 0, 0.3) 30%,
+    rgba(255, 200, 100, 0.5) 50%,
+    rgba(255, 140, 0, 0.3) 70%,
+    rgba(139, 69, 19, 0) 90%,
+    transparent);
+}
+
+.dragon-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Treasure coin accent on first column */
+.dragon-table td:first-child {
+  font-weight: 700;
+  color: #ffd700;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+  position: relative;
+}
+
+.dragon-table td:first-child::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffd700 0%, #ff8c00 70%, #8b4513 100%);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
+}
+
+/* Claw mark hover effect */
+.dragon-table tbody tr:hover td:last-child::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.6));
+  transform: translateY(-50%) rotate(-15deg);
+  box-shadow: 0 2px 0 rgba(255, 140, 0, 0.3), 0 -2px 0 rgba(255, 140, 0, 0.3);
+}

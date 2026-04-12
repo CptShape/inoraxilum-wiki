@@ -1,0 +1,99 @@
+/* 
+  Scroll Table - Parchment-style table for general use
+  Usage: <table class="scroll-table">...</table>
+*/
+
+.scroll-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(135deg, rgba(253, 245, 230, 0.1) 0%, rgba(250, 240, 220, 0.05) 100%);
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.5),
+    inset 0 1px 3px rgba(255, 255, 255, 0.1);
+  font-family: 'IM Fell English', serif;
+  color: #f3e5ab;
+  margin: 1.5rem 0;
+}
+
+.scroll-table th {
+  background: linear-gradient(to bottom, #8b4513 0%, #654321 100%);
+  color: #ffd700;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #daa520;
+  font-family: 'Cinzel', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.scroll-table td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.4);
+  vertical-align: top;
+  transition: background-color 0.2s ease;
+}
+
+.scroll-table tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.15);
+}
+
+.scroll-table tr:nth-child(odd) {
+  background-color: rgba(101, 67, 33, 0.1);
+}
+
+.scroll-table tr:hover {
+  background-color: rgba(218, 165, 32, 0.2);
+}
+
+.scroll-table tr:last-child td {
+  border-bottom: none;
+}
+
+.scroll-table td:first-child {
+  font-weight: bold;
+  color: #ffcc66;
+}
+
+/* Special column styling for numeric data */
+.scroll-table td.numeric {
+  font-family: 'MedievalSharp', cursive;
+  text-align: center;
+  color: #ffdd99;
+}
+
+/* Header groups */
+.scroll-table thead tr:first-child th {
+  border-top: none;
+}
+
+/* Scroll-like decorative corners */
+.scroll-table::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-table {
+    font-size: 0.9rem;
+  }
+  
+  .scroll-table th,
+  .scroll-table td {
+    padding: 0.75rem 1rem;
+  }
+}

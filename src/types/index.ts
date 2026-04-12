@@ -9,6 +9,42 @@ export interface Chapter {
   // Markdown files support GitHub-flavored markdown and inline HTML.
   content: string;
   subChapters?: Chapter[]; // Recursive - sub-chapters are also Chapter type
+  prevChapter?: string;
+  nextChapter?: string;
+}
+
+export interface TimelineEvent {
+  id: string;
+  year: number;
+  title: string;
+  description?: string;
+  color?: string;
+  size?: 'sm' | 'md' | 'lg';
+  goChapter?: string;
+  goChapterPart?: string;
+}
+
+export interface TimelineRange {
+  id: string;
+  label: string;
+  start: number;
+  end: number;
+  color?: string;
+}
+
+export interface TimelineFrontmatter {
+  pageType?: 'timeline';
+  timeline?: boolean;
+  startYear?: number;
+  endYear: number;
+  scale?: number;
+  events: TimelineEvent[];
+  ranges?: TimelineRange[];
+}
+
+export interface ParsedMarkdownContent {
+  frontmatter: Record<string, unknown>;
+  body: string;
 }
 
 export type ViewMode = 'chapters' | 'markdown';

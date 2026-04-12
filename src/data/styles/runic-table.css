@@ -1,0 +1,133 @@
+/* Runic Table - Mystical glowing runes with dark stone */
+.runic-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: radial-gradient(ellipse at center, #1a1625 0%, #0f0d16 100%);
+  border: 2px solid #5a4a78;
+  border-radius: 4px;
+  box-shadow: 
+    0 0 30px rgba(138, 109, 204, 0.3),
+    inset 0 0 60px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(138, 109, 204, 0.2);
+  position: relative;
+  overflow: hidden;
+  font-family: 'MedievalSharp', cursive;
+  color: #e6ddff;
+}
+
+.runic-table::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(138, 109, 204, 0.04) 28px, rgba(138, 109, 204, 0.04) 29px),
+    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(138, 109, 204, 0.03) 28px, rgba(138, 109, 204, 0.03) 29px);
+  pointer-events: none;
+}
+
+/* Glowing rune corners */
+.runic-table::after {
+  content: 'ᚱᚢᚾᛖ';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.7rem;
+  color: #8a6dcc;
+  text-shadow: 0 0 8px #8a6dcc;
+  opacity: 0.5;
+  letter-spacing: 4px;
+}
+
+.runic-table thead {
+  background: linear-gradient(180deg, #2d2442 0%, #1f1a30 100%);
+  position: relative;
+}
+
+.runic-table thead::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(138, 109, 204, 0.15), transparent);
+  animation: rune-sweep 4s linear infinite;
+}
+
+@keyframes rune-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.runic-table th {
+  padding: 16px 20px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c4b5f0;
+  text-shadow: 
+    0 0 10px rgba(138, 109, 204, 0.8),
+    0 0 20px rgba(138, 109, 204, 0.4);
+  border-bottom: 2px solid #5a4a78;
+  position: relative;
+}
+
+.runic-table th::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8a6dcc, transparent);
+  box-shadow: 0 0 8px #8a6dcc;
+}
+
+.runic-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(90, 74, 120, 0.3);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.runic-table tbody tr {
+  position: relative;
+}
+
+.runic-table tbody tr::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, rgba(138, 109, 204, 0), transparent);
+  transition: background 0.3s ease;
+}
+
+.runic-table tbody tr:hover {
+  background: rgba(138, 109, 204, 0.08);
+  box-shadow: inset 0 0 20px rgba(138, 109, 204, 0.1);
+}
+
+.runic-table tbody tr:hover::before {
+  background: linear-gradient(180deg, transparent, #8a6dcc, transparent);
+  box-shadow: 0 0 10px #8a6dcc;
+}
+
+.runic-table tbody tr:nth-child(odd) td:first-child {
+  border-left: 1px solid rgba(138, 109, 204, 0.15);
+}
+
+.runic-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Rune marks in cells */
+.runic-table td:first-child::before {
+  content: '◆';
+  margin-right: 8px;
+  color: #8a6dcc;
+  opacity: 0.6;
+  text-shadow: 0 0 6px #8a6dcc;
+}

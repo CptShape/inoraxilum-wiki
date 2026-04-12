@@ -1,6 +1,8 @@
+<h2 class="header" data-part="Dragonborn">Ortak</h2>
+
 ufak main ırk tanıtımı
 
-<table class="tableRow">
+<table class="draconic-table">
     <caption>Irk Avantaj Tablosu</caption>
     <thead>
         <tr>
@@ -24,7 +26,7 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
     <caption>Irk Dezavantaj Tablosu</caption>
     <thead>
         <tr>
@@ -48,11 +50,17 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-## Elemental Dragonborn
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Elemental Dragonborn">Elemental Dragonborn</h2>
+
+<img src="./resources/races/elemental-dragonborn.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -100,7 +108,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -218,7 +226,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -241,13 +249,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
-                ***
+                ★
                 </td>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                ****
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -255,12 +263,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
+                ★★★★
                 </td>
                 <td>
-                **
+                ★★★★★
                 </td>
             </tr>
             <tr>
@@ -268,19 +277,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                ***
+                ★★★★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -331,7 +340,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -349,7 +358,7 @@ ufak main ırk tanıtımı
                     Draconic Ancestry (Dragon)
                 </td>
                 <td>
-                    Bir element seçersin. Bu element'e karşı %25 resistence kazanırsın. Bu element'i ağzından üfleyebilirsin. Bazı level'larda içindeki ejderha güçlenir, ejderha güçleri listesinden güçler seçersin.
+                    Bir element seçersin. Bu element'e karşı %50 resistence kazanırsın. Bu element'i ağzından üfleyebilirsin. Bazı level'larda içindeki ejderha güçlenir, ejderha güçleri listesinden güçler seçersin.
                 </td>
             </tr>
             <tr>
@@ -360,15 +369,23 @@ ufak main ırk tanıtımı
                     Ejder kanı bir çok kimya ve simya karışımında kullanılan değerli bir eşyadır. D Tier kan ile başlarsın.
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Draconic Wisdom and Charm
+                </td>
+                <td>
+                    +2 WIS , +2 CHA
+                </td>
+            </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama
@@ -387,11 +404,17 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## Kobold
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Kobold">Kobold</h2>
+
+<img src="./resources/races/kobold.jpg" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -439,7 +462,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -546,7 +569,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -569,13 +592,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
-                *
+                ★★
                 </td>
                 <td>
-                **
+                ★★★
                 </td>
                 <td>
-                ***
+                ★
                 </td>
             </tr>
             <tr>
@@ -583,13 +606,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                **
+                ★★★★
                 </td>
                 <td>
-                ***
+                ★★★★★
                 </td>
                 <td>
-                ****
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -597,18 +620,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
+                ★★★
                 </td>
                 <td>
-                *
+                ★★★★
                 </td>
                 <td>
-                **
+                ★★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -659,7 +683,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -690,16 +714,16 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    Greater Dexterity
+                    Street Smart
                 </td>
                 <td>
-                    +4 DEX
+                    +2 DEX , +2 INT
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -723,11 +747,17 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## Wyrmblood
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Wyrmblood Dragonborn">Wyrmblood Dragonborn</h2>
+
+<img src="./resources/races/wyrmblood-dragonborn.png" width="100%">
+
 *açıklama*
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -775,7 +805,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -893,7 +923,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -916,13 +946,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
-                ****
+                ★★★
                 </td>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                ***
+                ★
                 </td>
             </tr>
             <tr>
@@ -930,12 +960,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                **
+                ★★★★★
                 </td>
                 <td>
+                ★★★★
                 </td>
                 <td>
-                *
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -943,19 +974,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                ***
+                ★★★★
                 </td>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                **
+                ★★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -1006,7 +1037,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -1046,12 +1077,12 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="draconic-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama
