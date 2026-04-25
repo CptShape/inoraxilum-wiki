@@ -5,6 +5,7 @@ import { styleChapter } from './styles/styles';
 import { chronicleChapter } from './worldbuilding-handbook/chapters/history/history';
 import { worldbuildingHandbookCodex } from './worldbuilding-handbook/chapters/worldbuilding-handbook-chapters';
 import { pleiadasSistersChapter } from './worldbuilding-handbook/chapters/history/asd/pleiadas-sisters';
+import { toolsChapter } from './tools/chapters/tools';
 
 // Export all chapters as an array for the application
 export const chapters: Chapter[] = [
@@ -12,7 +13,8 @@ export const chapters: Chapter[] = [
   worldbuildingHandbookCodex,
   chronicleChapter,
   styleChapter,
-  pleiadasSistersChapter
+  pleiadasSistersChapter,
+  toolsChapter
 ];
 
 export const allChapters: Chapter[] = [
@@ -20,7 +22,8 @@ export const allChapters: Chapter[] = [
   worldbuildingHandbookCodex,
   chronicleChapter,
   styleChapter,
-  pleiadasSistersChapter
+  pleiadasSistersChapter,
+  toolsChapter
 ];
 
 // Also export individual chapters for direct access
@@ -29,5 +32,6 @@ export {
   worldbuildingHandbookCodex,
   chronicleChapter,
   styleChapter,
-  pleiadasSistersChapter
+  pleiadasSistersChapter,
+  toolsChapter
 };

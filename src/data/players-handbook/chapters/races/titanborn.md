@@ -1,6 +1,8 @@
+<h2 class="header" data-part="Titanborn">Ortak</h2>
+
 ufak main ırk tanıtımı
 
-<table class="necromancer-table">
+<table class="titanborn-table">
     <caption>Irk Avantaj Tablosu</caption>
     <thead>
         <tr>
@@ -15,16 +17,16 @@ ufak main ırk tanıtımı
     <tbody>
         <tr>
             <td>
-                Reanimated
+                Titan Ancestry
             </td>
             <td>
-                Bleed immunity. Fear immunity. Pain Tolerance Proficiency.
+                Evrenin oluşumunda büyük rol oynayan Titanların soyundan olduğun için evren ile özel bir bağın var.
             </td>
         </tr>
     </tbody>
 </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
     <caption>Irk Dezavantaj Tablosu</caption>
     <thead>
         <tr>
@@ -39,36 +41,25 @@ ufak main ırk tanıtımı
     <tbody>
         <tr>
             <td>
-                Radiant Weakness
+                Curse From The Gods
             </td>
             <td>
-                Radiant hasar türünden 2 kat hasar alır.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Undead
-            </td>
-            <td>
-                Kimliğini gizlemek zorundasın. Yaşayanlar tarafından pek sevilmiyorsun.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Death Save
-            </td>
-            <td>
-                Death Save Throwların kalktığın zaman sıfırlanmaz, birikir. Azaltmak için bir kaç yöntem var.
+                Tanrıların ve Titanların verdiği savaşta galip gelen Tanrılar, tüm Titanları ve soylarını lanetledi.
             </td>
         </tr>
     </tbody>
 </table>
 
-## Skeleton
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Goliath">Goliath</h2>
+
+<img src="./resources/races/goliath.jpg" width="100%">
 *açıklama*
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -86,7 +77,7 @@ ufak main ırk tanıtımı
                     Base HP
                 </td>
                 <td>
-                    Undead olmadan önceki ırka bağlı. Aynısı
+                    Yaşa bağlı. Detaylı bilgi "Goliath Boy Tablosu"'nda bulunmaktadır.
                 </td>
             </tr>
             <tr>
@@ -94,7 +85,7 @@ ufak main ırk tanıtımı
                     Size
                 </td>
                 <td>
-                    Undead olmadan önceki ırka bağlı. Aynısı.
+                    Yaşa bağlı. Detaylı bilgi "Goliath Boy Tablosu"'nda bulunmaktadır.
                 </td>
             </tr>
             <tr>
@@ -102,7 +93,7 @@ ufak main ırk tanıtımı
                     Speed
                 </td>
                 <td>
-                    Undead olmadan önceki ırka bağlı. +2.
+                    Yaşa bağlı. Detaylı bilgi "Goliath Boy Tablosu"'nda bulunmaktadır.
                 </td>
             </tr>
             <tr>
@@ -110,13 +101,13 @@ ufak main ırk tanıtımı
                     Languages
                 </td>
                 <td>
-                    Undead olmadan önceki ırka bağlı. Aynısı.
+                    Common, Giant
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -134,19 +125,96 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    <p>Undead</p>
+                    <p>0 - 2</p>
                 </td>
                 <td>
-                    <p>Undead</p>
+                    <p>Bebek</p>
                 </td>
                 <td>
-                    <p>Öldüğün an yaşın neyse bedenin o yaşta sıkışıp kalır. Undead olmadan önceki ırka bağlı.</p>
+                    <p>Fiziksel ve zihinsel gelişim başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3 - 12</p>
+                </td>
+                <td>
+                    <p>Çocuk</p>
+                </td>
+                <td>
+                    <p>Temel öğrenme dönemi</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>13 - 19</p>
+                </td>
+                <td>
+                    <p>Ergen</p>
+                </td>
+                <td>
+                    <p>Fiziksel değişim, kimlik oluşumu</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>20 - 100</p>
+                </td>
+                <td>
+                    <p>Genç Yetişkin</p>
+                </td>
+                <td>
+                    <p>Fiziksel zirve başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>101 - 280</p>
+                </td>
+                <td>
+                    <p>Yetişkin</p>
+                </td>
+                <td>
+                    <p>Dengeli dönem</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>281 - 350</p>
+                </td>
+                <td>
+                    <p>Olgun</p>
+                </td>
+                <td>
+                    <p>Tecrübe yüksek, fiziksel düşüş başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>350+</p>
+                </td>
+                <td>
+                    <p>Yaşlı</p>
+                </td>
+                <td>
+                    <p>Fiziksel zayıflık, zihinsel düşüş başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>400</p>
+                </td>
+                <td>
+                    <p>Ortalama Ömür</p>
+                </td>
+                <td>
+                    <p>Ortalama ömür sonu</p>
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -169,12 +237,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
+                ★★★★
                 </td>
                 <td>
-                *
+                ★★★★★
                 </td>
                 <td>
-                **
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -182,13 +251,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                **
+                ★★★★
                 </td>
                 <td>
-                ***
+                ★★
                 </td>
             </tr>
             <tr>
@@ -196,19 +265,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                ***
+                ★★★
                 </td>
                 <td>
-                ****
+                ★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -259,7 +328,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -274,40 +343,24 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    No Vitality
+                    Hydrosophist Proficiency
                 </td>
                 <td>
-                    Can iksiri ve can büyüleri sana hasar verir.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Poison Healing
-                </td>
-                <td>
-                    Zehir seni iyileştirir.
+                    Hydrosophist Proficiency ile başlar. Su yaratma yeteneği de yanında gelir.
                 </td>
             </tr>
             <tr>
                 <td>
-                    Stealth Proficiency
+                    Titan Growth
                 </td>
                 <td>
-                    Stealth Proficiency kazanırsın.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Play Dead
-                </td>
-                <td>
-                    Ölü taklidi yapabilirsin.
+                    Ölene kadar uzamaya devam eder.
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -322,445 +375,71 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    Bludgeoning Weakness
+                    ???
                 </td>
                 <td>
-                    Bludgeoning sana ekstra hasar verir.
+                    ???
                 </td>
             </tr>
         </tbody>
 </table>
 
-## Zombie
-<img src="worlds/test.png" width="300">
-*açıklama*
-
-<table class="necromancer-table">
-        <caption>Özellik Tablosu</caption>
+<table class="titanborn-table">
+        <caption>Goliath Boy Tablosu</caption>±
         <thead>
             <tr>
                 <th>
-                    Özellik Adı
+                    Boy
                 </th>
                 <th>
-                    Özellik
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Base HP
-                </td>
-                <td>
-                    Undead olmadan önceki ırka bağlı. +%20
-                </td>
-            </tr>
-            <tr>
-                <td>
                     Size
-                </td>
-                <td>
-                    Undead olmadan önceki ırka bağlı. Aynısı.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Speed
-                </td>
-                <td>
-                    Undead olmadan önceki ırka bağlı. -2.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Languages
-                </td>
-                <td>
-                    Undead olmadan önceki ırka bağlı. Aynısı.
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="necromancer-table">
-        <caption>Yaş Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Yaş
                 </th>
                 <th>
-                    Aşama
-                </th>
-                <th>
-                    Açıklama
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <p>Undead</p>
-                </td>
-                <td>
-                    <p>Undead</p>
-                </td>
-                <td>
-                    <p>Öldüğün an yaşın neyse bedenin o yaşta sıkışıp kalır. Undead olmadan önceki ırka bağlı.</p>
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="necromancer-table">
-        <caption>Ahlak Tablosu</caption>
-        <thead>
-            <tr>
-                <th> 
-                </th>
-                <th>
-                    Lawful
-                </th>
-                <th>
-                    Neutral
-                </th>
-                <th>
-                    Chaotic
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    Good
-                </th>
-                <td>
-                </td>
-                <td>
-                *
-                </td>
-                <td>
-                **
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Neutral
-                </th>
-                <td>
-                *
-                </td>
-                <td>
-                **
-                </td>
-                <td>
-                ***
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Evil
-                </th>
-                <td>
-                **
-                </td>
-                <td>
-                ***
-                </td>
-                <td>
-                ****
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-<table class="necromancer-table">
-        <caption>Önyargı Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Önyargı
-                </th>
-                <th>
-                    Irk
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    Sevgi
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    İyi
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Nötr
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Kötü
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Nefret
-                </th>
-                <td>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-<table class="necromancer-table">
-        <caption>Irk Avantaj Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Avantaj
-                </th>
-                <th>
-                    Açıklama
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    No Vitality
-                </td>
-                <td>
-                    Can iksiri ve can büyüleri sana hasar verir.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Poison Healing
-                </td>
-                <td>
-                    Zehir seni iyileştirir.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Corpse Eater
-                </td>
-                <td>
-                    Cesed ve beyin yiyerek iyileşirsin.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Limb Control
-                </td>
-                <td>
-                    Kopan uzuvların companion gibi tur oynayabilir ama ana bedenin eksik uzvuna bağlı olarak debuff'lar alır. Detaylı bilgi için "Zombie Uzuv Tablosu"nu incele.
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="necromancer-table">
-        <caption>Irk Dezavantaj Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Dezavantaj
-                </th>
-                <th>
-                    Açıklama
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Slashing Weakness
-                </td>
-                <td>
-                    Slashing sana ekstra hasar verir.
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-<table class="necromancer-table">
-        <caption>Zombie Uzuv Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Uzuv
-                </th>
-                <th>
-                    AP
+                    Base HP
                 </th>
                 <th>
                     Speed
                 </th>
-                <th>
-                    HP
-                </th>
-                <th>
-                    Debuff
-                </th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    El
+                    60 - 125
                 </td>
                 <td>
-                    Combat: 2 , Movement: 1 , Reaction: 0
+                    Small
                 </td>
                 <td>
-                    6
+                    75
                 </td>
                 <td>
-                    Senin Max HP'nin %4'ü
-                </td>
-                <td>
-                    El gerektiren eylemleri gerçekleştiremezsin, STR Zarlarına -2.
+                    7
                 </td>
             </tr>
             <tr>
                 <td>
-                    Kol
-                </td>
-                <td>
-                    Combat: 2 , Movement: 1 , Reaction: 0
-                </td>
-                <td>
-                    4
-                </td>
-                <td>
-                    Senin Max HP'nin %12'si
-                </td>
-                <td>
-                    El ve kol gerektiren eylemleri gerçekleştiremezsin, STR Zarlarına -4.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Ayak
-                </td>
-                <td>
-                    Combat: 2 , Movement: 1 , Reaction: 0
-                </td>
-                <td>
-                    8
-                </td>
-                <td>
-                    Senin Max HP'nin %4'ü
-                </td>
-                <td>
-                    Ayak gerektiren eylemleri gerçekleştiremezsin, DEX Zarlarına -2. Speed -1.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Bacak
-                </td>
-                <td>
-                    Combat: 2 , Movement: 1 , Reaction: 0
-                </td>
-                <td>
-                    6
-                </td>
-                <td>
-                    Senin Max HP'nin %12'si
-                </td>
-                <td>
-                    Ayak ve bacak gerektiren eylemleri gerçekleştiremezsin, DEX Zarlarına -4. Speed -2.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Kafa
-                </td>
-                <td>
-                    Combat: 2 , Movement: 1 , Reaction: 0
-                </td>
-                <td>
-                    4
-                </td>
-                <td>
-                    Senin Max HP'nin %20'si
-                </td>
-                <td>
-                    3rd person izlemek zorundasın bedeninin savaşmasını, bu da her fiziksel eylemine dezavantaj verir.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Beden
-                </td>
-                <td>
-                    Eylem gerçekleştiremez, turu yoktur.
-                </td>
-                <td>
-                    Hareket edemez.
-                </td>
-                <td>
-                    Senin Max HP'nin %32'si
-                </td>
-                <td>
-                    Bedenine bağlı her uzuvun ile savaştaki ana halin budur.
-                </td>
-            </tr>
-        </tbody>
-</table>
-
-## Revenant
-<img src="worlds/test.png" width="300">
-*açıklama*
-
-<table class="necromancer-table">
-        <caption>Özellik Tablosu</caption>
-        <thead>
-            <tr>
-                <th>
-                    Özellik Adı
-                </th>
-                <th>
-                    Özellik
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    Base HP
-                </td>
-                <td>
-                    Undead olmadan önceki ırka bağlı. -%20
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Size
+                    125 - 250
                 </td>
                 <td>
                     Medium
                 </td>
+                <td>
+                    100
+                </td>
+                <td>
+                    8
+                </td>
             </tr>
             <tr>
                 <td>
-                    Speed
+                    250 - 500
+                </td>
+                <td>
+                    Large
+                </td>
+                <td>
+                    140
                 </td>
                 <td>
                     10
@@ -768,16 +447,107 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    Languages
+                    500 - 1000
                 </td>
                 <td>
-                    Undead olmadan önceki ırka bağlı. Aynısı.
+                    Huge
+                </td>
+                <td>
+                    220
+                </td>
+                <td>
+                    14
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1000 - 2000
+                </td>
+                <td>
+                    Giant
+                </td>
+                <td>
+                    340
+                </td>
+                <td>
+                    20
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2000+
+                </td>
+                <td>
+                    Titan
+                </td>
+                <td>
+                    500
+                </td>
+                <td>
+                    28
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="necromancer-table">
+
+
+
+
+<h2 class="header" data-part="Ogre">Ogre</h2>
+
+<img src="./resources/races/ogre.webp" width="100%">
+*açıklama*
+
+<table class="titanborn-table">
+        <caption>Özellik Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Özellik Adı
+                </th>
+                <th>
+                    Özellik
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Base HP
+                </td>
+                <td>
+                    200
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Size
+                </td>
+                <td>
+                    Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Speed
+                </td>
+                <td>
+                    7
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Languages
+                </td>
+                <td>
+                    None
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="titanborn-table">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -795,19 +565,96 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    <p>Undead</p>
+                    <p>0 - 2</p>
                 </td>
                 <td>
-                    <p>Undead</p>
+                    <p>Bebek</p>
                 </td>
                 <td>
-                    <p>Öldüğün an yaşın neyse bedenin o yaşta sıkışıp kalır. Undead olmadan önceki ırka bağlı.</p>
+                    <p>Fiziksel ve zihinsel gelişim başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3 - 10</p>
+                </td>
+                <td>
+                    <p>Çocuk</p>
+                </td>
+                <td>
+                    <p>Temel öğrenme dönemi</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>11 - 20</p>
+                </td>
+                <td>
+                    <p>Ergen</p>
+                </td>
+                <td>
+                    <p>Fiziksel değişim, kimlik oluşumu</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>21 - 35</p>
+                </td>
+                <td>
+                    <p>Genç Yetişkin</p>
+                </td>
+                <td>
+                    <p>Fiziksel zirve başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>36 - 70</p>
+                </td>
+                <td>
+                    <p>Yetişkin</p>
+                </td>
+                <td>
+                    <p>Dengeli dönem</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>71 - 100</p>
+                </td>
+                <td>
+                    <p>Olgun</p>
+                </td>
+                <td>
+                    <p>Tecrübe yüksek, fiziksel düşüş başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>100+</p>
+                </td>
+                <td>
+                    <p>Yaşlı</p>
+                </td>
+                <td>
+                    <p>Fiziksel zayıflık, zihinsel düşüş başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>120</p>
+                </td>
+                <td>
+                    <p>Ortalama Ömür</p>
+                </td>
+                <td>
+                    <p>Ortalama ömür sonu</p>
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -830,12 +677,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
+                ★★
                 </td>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                **
+                ★★★★
                 </td>
             </tr>
             <tr>
@@ -843,13 +691,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                **
+                ★★★★
                 </td>
                 <td>
-                ***
+                ★★★★★
                 </td>
             </tr>
             <tr>
@@ -857,19 +705,19 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                **
+                ★
                 </td>
                 <td>
-                ***
+                ★★
                 </td>
                 <td>
-                ****
+                ★★★
                 </td>
             </tr>
         </tbody>
     </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -920,7 +768,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -935,48 +783,40 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    No Vitality
+                    I... live... swamp
                 </td>
                 <td>
-                    Can iksiri ve can büyüleri sana hasar verir.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Invisibility
-                </td>
-                <td>
-                    Görünmez olabilir.
+                    Bataklık gibi terrain dezavantajlarından etkilenmez.
                 </td>
             </tr>
             <tr>
                 <td>
-                    Intangability
+                    Ogre's Stomach
                 </td>
                 <td>
-                    Dokunulmaz olabilir.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Whisper of the Dead
-                </td>
-                <td>
-                    Fear atabilir.
+                    Yediği şeylerin dezavantajlarından etkilenmez, çoğu şeyi yiyebilir. Tercihleri çiğ et ve odundur.
                 </td>
             </tr>
             <tr>
                 <td>
-                    Vengeance
+                    Fast Digestion
                 </td>
                 <td>
-                    Sana kötülük yapan herkesden intikam almak için hayata tutundun. Hedeflerinin yönlerini sezebilirsin.
+                    Savaş sırasında bile yemek yiyerek can yenileyebilir.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Built Like an... Ogre
+                </td>
+                <td>
+                    STR ve CON ikilisinden birine +10, birine +7 ver. Ve Force, Intimidation, Pain Tolerance, Resilience yeteneklerinde proficiency.
                 </td>
             </tr>
         </tbody>
 </table>
 
-<table class="necromancer-table">
+<table class="titanborn-table">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -991,10 +831,450 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    Radiant Weakness
+                    Retard
                 </td>
                 <td>
-                    Radiant'a ekstra %50 weakness.
+                    INT,WIS,CHA becerilerinden birine maximum -8 olacak şekilde -16 dağıt.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lesser Dexterity
+                </td>
+                <td>
+                    -4 DEX
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+
+
+
+
+<h2 class="header" data-part="Jötunn">Jötunn</h2>
+
+<img src="./resources/races/jötunn.jpg" width="100%">
+*açıklama*
+
+<table class="titanborn-table">
+        <caption>Özellik Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Özellik Adı
+                </th>
+                <th>
+                    Özellik
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Base HP
+                </td>
+                <td>
+                    Yaşa bağlı. Detaylı bilgi "Jötunn Boy Tablosu"'nda bulunmaktadır.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Size
+                </td>
+                <td>
+                    Yaşa bağlı. Detaylı bilgi "Jötunn Boy Tablosu"'nda bulunmaktadır.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Speed
+                </td>
+                <td>
+                    Yaşa bağlı. Detaylı bilgi "Jötunn Boy Tablosu"'nda bulunmaktadır.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Languages
+                </td>
+                <td>
+                    Common, Draconic, Giant
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="titanborn-table">
+        <caption>Yaş Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Yaş
+                </th>
+                <th>
+                    Aşama
+                </th>
+                <th>
+                    Açıklama
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <p>0 - 10</p>
+                </td>
+                <td>
+                    <p>Bebek</p>
+                </td>
+                <td>
+                    <p>Fiziksel ve zihinsel gelişim başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>11 - 120</p>
+                </td>
+                <td>
+                    <p>Çocuk</p>
+                </td>
+                <td>
+                    <p>Temel öğrenme dönemi</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>121 - 300</p>
+                </td>
+                <td>
+                    <p>Ergen</p>
+                </td>
+                <td>
+                    <p>Fiziksel değişim, kimlik oluşumu</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>301 - 700</p>
+                </td>
+                <td>
+                    <p>Genç Yetişkin</p>
+                </td>
+                <td>
+                    <p>Fiziksel zirve başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>701 - 1800</p>
+                </td>
+                <td>
+                    <p>Yetişkin</p>
+                </td>
+                <td>
+                    <p>Dengeli dönem</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>1801 - 2600</p>
+                </td>
+                <td>
+                    <p>Olgun</p>
+                </td>
+                <td>
+                    <p>Tecrübe yüksek, fiziksel düşüş başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>2600+</p>
+                </td>
+                <td>
+                    <p>Yaşlı</p>
+                </td>
+                <td>
+                    <p>Fiziksel zayıflık, zihinsel düşüş başlangıcı</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3000</p>
+                </td>
+                <td>
+                    <p>Ortalama Ömür</p>
+                </td>
+                <td>
+                    <p>Ortalama ömür sonu</p>
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="titanborn-table">
+        <caption>Ahlak Tablosu</caption>
+        <thead>
+            <tr>
+                <th> 
+                </th>
+                <th>
+                    Lawful
+                </th>
+                <th>
+                    Neutral
+                </th>
+                <th>
+                    Chaotic
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    Good
+                </th>
+                <td>
+                ★
+                </td>
+                <td>
+                ★★
+                </td>
+                <td>
+                ★★★
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Neutral
+                </th>
+                <td>
+                ★★★
+                </td>
+                <td>
+                ★★★★
+                </td>
+                <td>
+                ★★★★★
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Evil
+                </th>
+                <td>
+                ★★
+                </td>
+                <td>
+                ★★★
+                </td>
+                <td>
+                ★★★★
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<table class="titanborn-table">
+        <caption>Önyargı Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Önyargı
+                </th>
+                <th>
+                    Irk
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    Sevgi
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    İyi
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nötr
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Kötü
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nefret
+                </th>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<table class="titanborn-table">
+        <caption>Irk Avantaj Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Avantaj
+                </th>
+                <th>
+                    Açıklama
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Titan Growth
+                </td>
+                <td>
+                    Ölene kadar uzamaya devam eder.
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="titanborn-table">
+        <caption>Irk Dezavantaj Tablosu</caption>
+        <thead>
+            <tr>
+                <th>
+                    Dezavantaj
+                </th>
+                <th>
+                    Açıklama
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    ???
+                </td>
+                <td>
+                    ???
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+<table class="titanborn-table">
+        <caption>Jötunn Boy Tablosu</caption>±
+        <thead>
+            <tr>
+                <th>
+                    Boy
+                </th>
+                <th>
+                    Size
+                </th>
+                <th>
+                    Base HP
+                </th>
+                <th>
+                    Speed
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    60 - 125
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                    110
+                </td>
+                <td>
+                    8
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    125 - 250
+                </td>
+                <td>
+                    Medium
+                </td>
+                <td>
+                    150
+                </td>
+                <td>
+                    9
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    250 - 500
+                </td>
+                <td>
+                    Large
+                </td>
+                <td>
+                    210
+                </td>
+                <td>
+                    12
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    500 - 1000
+                </td>
+                <td>
+                    Huge
+                </td>
+                <td>
+                    330
+                </td>
+                <td>
+                    16
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1000 - 2000
+                </td>
+                <td>
+                    Giant
+                </td>
+                <td>
+                    510
+                </td>
+                <td>
+                    22
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2000+
+                </td>
+                <td>
+                    Titan
+                </td>
+                <td>
+                    750
+                </td>
+                <td>
+                    30
                 </td>
             </tr>
         </tbody>

@@ -1,6 +1,8 @@
+<h2 class="header" data-part="Orc">Ortak</h2>
+
 ufak main ırk tanıtımı
 
-<table class="tableRow">
+<table class="orc-table-warrior">
     <caption>Irk Avantaj Tablosu</caption>
     <thead>
         <tr>
@@ -24,7 +26,7 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-warrior">
     <caption>Irk Dezavantaj Tablosu</caption>
     <thead>
         <tr>
@@ -48,11 +50,16 @@ ufak main ırk tanıtımı
     </tbody>
 </table>
 
-## Gor'Thar Orc
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Gor'Thar Orc">Gor'Thar Orc</h2>
+
+<img src="./resources/races/jötunn.jpg" width="100%">
 *açıklama*
 
-<table class="tableRow">
+<table class="orc-table-warrior">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -100,7 +107,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-warrior">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -207,7 +214,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-warrior">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -269,7 +276,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="orc-table-warrior">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -320,7 +327,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="orc-table-warrior">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -352,7 +359,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-warrior">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -376,11 +383,16 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## Mor'Khal Orc
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Mor'Khal Orc">Mor'Khal Orc</h2>
+
+<img src="./resources/races/jötunn.jpg" width="100%">
 *açıklama*
 
-<table class="tableRow">
+<table class="orc-table-necro">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -428,7 +440,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-necro">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -535,7 +547,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-necro">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -595,7 +607,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="orc-table-necro">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -646,7 +658,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="orc-table-necro">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -678,7 +690,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-necro">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>
@@ -702,11 +714,16 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-## DRUID Orc
-<img src="worlds/test.png" width="300">
+
+
+
+
+<h2 class="header" data-part="Vor'Khai Orc">Vor'Khai Orc</h2>
+
+<img src="./resources/races/jötunn.jpg" width="100%">
 *açıklama*
 
-<table class="tableRow">
+<table class="orc-table-monk">
         <caption>Özellik Tablosu</caption>
         <thead>
             <tr>
@@ -754,7 +771,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-monk">
         <caption>Yaş Tablosu</caption>
         <thead>
             <tr>
@@ -861,7 +878,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-monk">
         <caption>Ahlak Tablosu</caption>
         <thead>
             <tr>
@@ -923,7 +940,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="orc-table-monk">
         <caption>Önyargı Tablosu</caption>
         <thead>
             <tr>
@@ -974,7 +991,7 @@ ufak main ırk tanıtımı
         </tbody>
     </table>
 
-<table class="tableRow">
+<table class="orc-table-monk">
         <caption>Irk Avantaj Tablosu</caption>
         <thead>
             <tr>
@@ -1006,7 +1023,7 @@ ufak main ırk tanıtımı
         </tbody>
 </table>
 
-<table class="tableRow">
+<table class="orc-table-monk">
         <caption>Irk Dezavantaj Tablosu</caption>
         <thead>
             <tr>

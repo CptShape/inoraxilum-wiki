@@ -4,6 +4,8 @@ import { Chapter } from '../types';
 import MarkdownRenderer, { PartInfo } from './MarkdownRenderer';
 import MythologyHub from './mythology/MythologyHub';
 import { allGods } from '../data/worldbuilding-handbook/mythology/gods';
+import { BattleTracker } from './BattleTracker';
+import { DiceMacros } from './DiceMacros';
 
 interface ContentViewProps {
   activeChapter: Chapter | null;
@@ -412,8 +414,22 @@ export const ContentView: React.FC<ContentViewProps> = ({
             </div>
           ) : null}
 
+          {/* ── Battle Tracker (special chapter) ────────────────────────────── */}
+          {activeChapter.content === 'battle-tracker' ? (
+            <div className="-mx-4 -mb-6">
+              <BattleTracker />
+            </div>
+          ) : null}
+
+          {/* ── Dice Macros (special chapter) ──────────────────────────────── */}
+          {activeChapter.content === 'dice-macros' ? (
+            <div className="-mx-4 -mb-6">
+              <DiceMacros />
+            </div>
+          ) : null}
+
           {/* ── Markdown content ───────────────────────────────────────────── */}
-          {activeChapter.content && activeChapter.content !== 'mythology' && (
+          {activeChapter.content && activeChapter.content !== 'mythology' && activeChapter.content !== 'battle-tracker' && activeChapter.content !== 'dice-macros' && (
             <div style={{ fontFamily: "'IM Fell English', serif" }}>
               <MarkdownRenderer
                 path={activeChapter.content}

@@ -29,7 +29,15 @@ base economy kuralı ve çoğu item için base fiyat tablosu
 
 
 
-
+Diminutive 0 - 10
+Miniature 10 - 30
+Tiny 30 - 60
+Small 60 - 125
+Medium 125 - 250
+Large 250 - 500
+Huge 500 - 1000
+Giant 1000 - 2000
+Titan 2000+
 
 
 
@@ -43,4 +51,70 @@ races/orc da druid ırkı yapılacak
 
 RACES
 Dragonborn'da subırkların dragon güçleri tabloları yapılacak.
-hobbit özellikler ve fotolarda kaldım
+Jötunn
+Orc
+Ex-Machina - runic table
+Undead
+
+
+
+
+
+
+
+
+
+
+
+Human - Adaptable race, can be anything
+
+ELF SUB-RACES
+High Elf (INT) - Wizard
+Wood Elf (WIS) - Conduit
+Dark Elf (CHA) - Sorcerer
+
+DWARF SUB-RACES
+Mountain Dwarf (STR) - Fighter
+Iron Dwarf (CON) - Barbarian
+Dark Dwarf (DEX) - Rogue
+
+DRAGONBORN SUB-RACES
+Elemental Dragonborn (WIS/CHA) - Sorcerer
+Wyrmblood Dragonborn (STR/CON) - Fighter
+Kobold (DEX/INT) - Wizard+Rogue
+
+HALFLING SUB-RACES
+Hobbit (DEX) - Rogue
+Gnome (INT) - Artificier
+Goblin (DEX/WIS) - Ranger
+
+ORC SUB-RACES
+Mor'Khal Orc (MENTAL orc) - Conduit
+Gor'Thar Orc (PHYSICAL orc) - Barbarian
+Vor'Khai Orc (BALANCED orc) - Monk
+
+TITAN ANCSESTORS
+Ogre () - 
+Goliath ()
+Jötunn ()
+
+
+
+Barbarian (CON/STR) - Mountain Dwarf, Iron Dwarf, Wyrmblood Dragon, 
+Fighter (STR/CON) - 
+Monk (STR/DEX/CON/WIS) - 
+Ranger (DEX/WIS) - 
+Rogue (DEX/INT) - 
+Paladin (STR/WIS) - 
+
+
+Sorcerer (CHA) - 
+Wizard (INT) - 
+Conduit (WIS) - 
+
+Druid - 
+Warlock - 
+Bard - 
+Cleric - 
+
+Artificier - 

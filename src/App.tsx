@@ -21,7 +21,8 @@ import './data/styles/draconic-table.css';
 import './data/styles/burglar-table.css';
 import './data/styles/hobbit-hoard-table.css';
 import './data/styles/hobbit-thief-table.css';
-import './data/styles/hobbit-market-table.css';
+import './data/styles/titanborn-table.css';
+import './data/styles/orc-table.css';
 
 // ─── URL Hash Utilities ──────────────────────────────────────────────
 // Hash format: #chapter-id/sub-chapter-id/deep-chapter-id

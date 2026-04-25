@@ -25,10 +25,18 @@ ufak main ırk tanıtımı
         </tr>
         <tr>
             <td>
-                DEX Save Proficiency
+                Great Luck
             </td>
             <td>
-                DEX Saving Throw proficiency kazan.
+                +5 LUCK
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lucky Break
+            </td>
+            <td>
+                Günde 3 kere: Bir zar sonucunu beğenmezsen, sonucunu LUCK Check atıp o sonuç ile değiştirebilirsin.
             </td>
         </tr>
     </tbody>
@@ -64,7 +72,7 @@ ufak main ırk tanıtımı
 
 <h2 class="header" data-part="Hobbit">Hobbit</h2>
 
-<img src="worlds/test.png" width="100%">
+<img src="./resources/races/hobbit.png" width="100%">
 
 *açıklama*
 
@@ -145,7 +153,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>3 - 12</p>
+                    <p>3 - 20</p>
                 </td>
                 <td>
                     <p>Çocuk</p>
@@ -156,7 +164,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>13 - 19</p>
+                    <p>21 - 35</p>
                 </td>
                 <td>
                     <p>Ergen</p>
@@ -167,7 +175,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>20 - 40</p>
+                    <p>36 - 60</p>
                 </td>
                 <td>
                     <p>Genç Yetişkin</p>
@@ -178,7 +186,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>41 - 100</p>
+                    <p>61 - 100</p>
                 </td>
                 <td>
                     <p>Yetişkin</p>
@@ -189,7 +197,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>101 - 150</p>
+                    <p>101 - 130</p>
                 </td>
                 <td>
                     <p>Olgun</p>
@@ -200,7 +208,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>150+</p>
+                    <p>130+</p>
                 </td>
                 <td>
                     <p>Yaşlı</p>
@@ -211,7 +219,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>200</p>
+                    <p>160</p>
                 </td>
                 <td>
                     <p>Ortalama Ömür</p>
@@ -246,13 +254,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
-                ***
+                ★★★★
                 </td>
                 <td>
-                ****
+                ★★★★★
                 </td>
                 <td>
-                **
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -260,13 +268,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                **
+                ★★★
                 </td>
                 <td>
-                ***
+                ★★★★
                 </td>
                 <td>
-                *
+                ★★
                 </td>
             </tr>
             <tr>
@@ -274,12 +282,13 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                *
+                ★★
                 </td>
                 <td>
-                **
+                ★★★
                 </td>
                 <td>
+                ★
                 </td>
             </tr>
         </tbody>
@@ -351,26 +360,18 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    Great Luck
-                </td>
-                <td>
-                    +4 LUCK
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Lucky Break
-                </td>
-                <td>
-                    Bir zar sonucunu beğenmezsen, sonucunu LUCK Check atıp o sonuç ile değiştirebilirsin.
-                </td>
-            </tr>
-            <tr>
-                <td>
                     Stealth Proficiency
                 </td>
                 <td>
                     Stealth Proficiency ile başlarsın.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Eye For Quality
+                </td>
+                <td>
+                    Değerli şeyleri sezebilir ve eşyaların fiyatını bilebilir.
                 </td>
             </tr>
             <tr>
@@ -381,6 +382,14 @@ ufak main ırk tanıtımı
                     +4 DEX
                 </td>
             </tr>
+            <tr>
+                <td>
+                    DEX Save Proficiency
+                </td>
+                <td>
+                    DEX Saving Throw proficiency kazan.
+                </td>
+            </tr>
         </tbody>
 </table>
 
@@ -389,7 +398,7 @@ ufak main ırk tanıtımı
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama
@@ -414,7 +423,7 @@ ufak main ırk tanıtımı
 
 <h2 class="header" data-part="Gnome">Gnome</h2>
 
-<img src="worlds/test.png" width="100%">
+<img src="./resources/races/gnome.jpg" width="100%">
 
 *açıklama*
 
@@ -484,7 +493,7 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    <p>0 - 2</p>
+                    <p>0 - 4</p>
                 </td>
                 <td>
                     <p>Bebek</p>
@@ -495,7 +504,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>3 - 12</p>
+                    <p>5 - 40</p>
                 </td>
                 <td>
                     <p>Çocuk</p>
@@ -506,7 +515,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>13 - 19</p>
+                    <p>41 - 100</p>
                 </td>
                 <td>
                     <p>Ergen</p>
@@ -517,7 +526,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>20 - 100</p>
+                    <p>101 - 180</p>
                 </td>
                 <td>
                     <p>Genç Yetişkin</p>
@@ -528,7 +537,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>101 - 200</p>
+                    <p>181 - 300</p>
                 </td>
                 <td>
                     <p>Yetişkin</p>
@@ -539,7 +548,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>201 - 320</p>
+                    <p>301 - 360</p>
                 </td>
                 <td>
                     <p>Olgun</p>
@@ -550,7 +559,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>320+</p>
+                    <p>360+</p>
                 </td>
                 <td>
                     <p>Yaşlı</p>
@@ -596,13 +605,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                ***
+                ★★★★
                 </td>
                 <td>
-                **
+                ★★★★★
                 </td>
             </tr>
             <tr>
@@ -610,13 +619,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                ****
+                ★★★
                 </td>
                 <td>
-                ***
+                ★★★★
                 </td>
             </tr>
             <tr>
@@ -624,12 +633,13 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
+                ★
                 </td>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                *
+                ★★★
                 </td>
             </tr>
         </tbody>
@@ -681,6 +691,7 @@ ufak main ırk tanıtımı
                     Nefret
                 </th>
                 <td>
+                    Elf
                 </td>
             </tr>
         </tbody>
@@ -701,18 +712,10 @@ ufak main ırk tanıtımı
         <tbody>
             <tr>
                 <td>
-                    Mental Advantage
-                </td>
-                <td>
-                    INT,WIS,CHA zarları avantajlıdır.
-                </td>
-            </tr>
-            <tr>
-                <td>
                     Darkvision
                 </td>
                 <td>
-                    Darkvision cantrip'i ile başlar.
+                    Darkvision ile başlar.
                 </td>
             </tr>
             <tr>
@@ -731,6 +734,14 @@ ufak main ırk tanıtımı
                     +4 INT
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Intellect
+                </td>
+                <td>
+                    INT zarları ve saving throwları avantajlıdır.
+                </td>
+            </tr>
         </tbody>
 </table>
 
@@ -739,7 +750,7 @@ ufak main ırk tanıtımı
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama
@@ -764,7 +775,7 @@ ufak main ırk tanıtımı
 
 <h2 class="header" data-part="Goblin">Goblin</h2>
 
-<img src="worlds/test.png" width="100%">
+<img src="./resources/races/goblin.png" width="100%">
 
 *açıklama*
 
@@ -845,7 +856,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>2 - 4</p>
+                    <p>2 - 12</p>
                 </td>
                 <td>
                     <p>Çocuk</p>
@@ -856,7 +867,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>5 - 8</p>
+                    <p>13 - 25</p>
                 </td>
                 <td>
                     <p>Ergen</p>
@@ -867,7 +878,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>9 - 20</p>
+                    <p>26 - 45</p>
                 </td>
                 <td>
                     <p>Genç Yetişkin</p>
@@ -878,7 +889,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>21 - 40</p>
+                    <p>46 - 80</p>
                 </td>
                 <td>
                     <p>Yetişkin</p>
@@ -889,7 +900,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>41 - 50</p>
+                    <p>81 - 100</p>
                 </td>
                 <td>
                     <p>Olgun</p>
@@ -900,7 +911,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>50+</p>
+                    <p>100+</p>
                 </td>
                 <td>
                     <p>Yaşlı</p>
@@ -911,7 +922,7 @@ ufak main ırk tanıtımı
             </tr>
             <tr>
                 <td>
-                    <p>60</p>
+                    <p>120</p>
                 </td>
                 <td>
                     <p>Ortalama Ömür</p>
@@ -946,12 +957,13 @@ ufak main ırk tanıtımı
                     Good
                 </th>
                 <td>
+                ★
                 </td>
                 <td>
-                *
+                ★★
                 </td>
                 <td>
-                **
+                ★★★
                 </td>
             </tr>
             <tr>
@@ -959,13 +971,13 @@ ufak main ırk tanıtımı
                     Neutral
                 </th>
                 <td>
-                **
+                ★★
                 </td>
                 <td>
-                ***
+                ★★★
                 </td>
                 <td>
-                ****
+                ★★★★
                 </td>
             </tr>
             <tr>
@@ -973,13 +985,13 @@ ufak main ırk tanıtımı
                     Evil
                 </th>
                 <td>
-                *
+                ★★★
                 </td>
                 <td>
-                **
+                ★★★★
                 </td>
                 <td>
-                ***
+                ★★★★★
                 </td>
             </tr>
         </tbody>
@@ -1054,7 +1066,7 @@ ufak main ırk tanıtımı
                     Nimble
                 </td>
                 <td>
-                    Her savaş 3 kere sana karşı yapılan başarılı saldırı hasarını yarılayabilirsin YADA başarısız saldırıdan hasarsız kurtulabilirsin.
+                    Günde 5 kere: Sana karşı yapılan başarılı saldırı hasarını yarılayabilirsin YADA başarısız saldırıdan hasarsız kurtulabilirsin. Short Rest 1 hak, Long Rest 2 hak yeniler.
                 </td>
             </tr>
             <tr>
@@ -1089,7 +1101,7 @@ ufak main ırk tanıtımı
         <thead>
             <tr>
                 <th>
-                    Avantaj
+                    Dezavantaj
                 </th>
                 <th>
                     Açıklama
