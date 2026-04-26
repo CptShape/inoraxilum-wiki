@@ -6,6 +6,7 @@ import MythologyHub from './mythology/MythologyHub';
 import { allGods } from '../data/worldbuilding-handbook/mythology/gods';
 import { BattleTracker } from './BattleTracker';
 import { DiceMacros } from './DiceMacros';
+import { WorldMap } from './WorldMap';
 
 interface ContentViewProps {
   activeChapter: Chapter | null;
@@ -335,7 +336,10 @@ export const ContentView: React.FC<ContentViewProps> = ({
 
       {/* ── Scrollable content ────────────────────────────────────────────── */}
       <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-12 py-10">
+        <div 
+          className="mx-auto px-12 py-10 transition-all duration-300"
+          style={{ width: `${(activeChapter.width ?? 0.5) * 100}%`, minWidth: '320px' }}
+        >
 
           {/* ── Breadcrumb + Share Link ────────────────────────────────────── */}
           {breadcrumb.length > 0 && (
@@ -428,8 +432,15 @@ export const ContentView: React.FC<ContentViewProps> = ({
             </div>
           ) : null}
 
+          {/* ── World Map (special chapter) ───────────────────────────────── */}
+          {activeChapter.content === 'world-map' ? (
+            <div className="-mx-4 -mb-6">
+              <WorldMap />
+            </div>
+          ) : null}
+
           {/* ── Markdown content ───────────────────────────────────────────── */}
-          {activeChapter.content && activeChapter.content !== 'mythology' && activeChapter.content !== 'battle-tracker' && activeChapter.content !== 'dice-macros' && (
+          {activeChapter.content && activeChapter.content !== 'mythology' && activeChapter.content !== 'battle-tracker' && activeChapter.content !== 'dice-macros' && activeChapter.content !== 'world-map' && (
             <div style={{ fontFamily: "'IM Fell English', serif" }}>
               <MarkdownRenderer
                 path={activeChapter.content}

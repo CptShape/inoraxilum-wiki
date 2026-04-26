@@ -244,66 +244,30 @@ function executeMacro(macro: DiceMacro, modifiers: Modifier[]): RollResult {
 }
 
 async function sendToDiscord(webhookUrl: string, characterName: string, result: RollResult): Promise<string | null> {
-  if (!webhookUrl || !webhookUrl.startsWith('http')) return 'Invalid webhook URL';
-
-  // Strip emoji from step labels for Discord (they can cause encoding issues)
-  const cleanLabel = (s: string) => s.replace(/[🎲📊❌🔄🏆💀⚡]/g, '').trim();
-
-  const breakdownText = result.steps
-    .map(s => `${cleanLabel(s.label)} = **${s.value}**${s.detail ? ` _(${s.detail})_` : ''}`)
-    .join('\n')
-    .slice(0, 1024);
-
-  const embed: Record<string, unknown> = {
-    title: `🎲 ${result.macroName}`,
-    color: 0xf59e0b,
-    fields: [
-      ...(result.description ? [{
-        name: 'Description',
-        value: result.description,
-        inline: false,
-      }] : []),
-      {
-        name: 'Formula',
-        value: '`' + result.formula + '`',
-        inline: false,
-      },
-      {
-        name: 'Result',
-        value: '**' + result.total + '**',
-        inline: true,
-      },
-      ...(breakdownText ? [{
-        name: 'Breakdown',
-        value: breakdownText,
-        inline: false,
-      }] : []),
-    ],
-    timestamp: new Date(result.timestamp).toISOString(),
-    footer: {
-      text: characterName ? `Rolled by ${characterName}` : 'Eldritch Grimoire Dice',
-    },
-  };
+  // We now hit our secure serverless backend which acts as a CORS proxy and message formatter.
+  const endpointUrl = "https://ulunavir-vercel.vercel.app/api/send-dice";
 
   try {
-    const response = await fetch(webhookUrl, {
+    const response = await fetch(endpointUrl, {
       method: 'POST',
-      mode: 'cors', // Explicitly set CORS mode
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        username: (characterName || 'Dice Roller').slice(0, 80),
-        embeds: [embed],
+        webhookUrl,
+        characterName,
+        result
       }),
     });
+
+    const data = await response.json().catch(() => ({}));
+
     if (!response.ok) {
-      const text = await response.text().catch(() => '');
-      console.error('Discord webhook error:', response.status, text);
-      return `Discord error ${response.status}: ${text.slice(0, 100)}`;
+      return data.error || `Server error ${response.status}`;
     }
+    
     return null; // success
   } catch (err) {
-    console.error('Failed to send to Discord:', err);
-    return `Network error: ${err instanceof Error ? err.message : 'Unknown'}`;
+    console.error('Failed to connect to serverless API:', err);
+    return `Server connection error. Ensure you are hosted on Vercel and the /api route is deployed.`;
   }
 }
 
@@ -316,7 +280,6 @@ function loadState(): DiceMacrosState {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      // Ensure Discord fields exist even if saved before the feature was added
       return {
         modifiers: parsed.modifiers ?? [],
         macros: parsed.macros ?? [],
@@ -328,8 +291,20 @@ function loadState(): DiceMacrosState {
   } catch { /* ignore */ }
   // Default state with example math function demos
   return {
-    modifiers: [],
-    macros: [],
+    modifiers: [
+      { id: 'str', name: 'Strength', value: '5' },
+      { id: 'dex', name: 'Dexterity', value: '3' },
+      { id: 'con', name: 'Constitution', value: '4' },
+      { id: 'prof', name: 'Proficiency', value: '2' },
+      { id: 'half_str', name: 'Half Strength', value: 'round(@str / 2)' },
+    ],
+    macros: [
+      { id: 'm1', name: 'Best Stat Attack', formula: '1d20 + max(@str, @dex) + @prof' },
+      { id: 'm2', name: 'Safe Damage', formula: 'min(2d6 + @str, 12)' },
+      { id: 'm3', name: 'Rounded Half CON', formula: '1d8 + round(@con / 2)' },
+      { id: 'm4', name: 'Round Up Half Dex', formula: '1d6 + roundup(@dex / 2)' },
+      { id: 'm5', name: 'Round Down Half STR', formula: '1d4 + rounddown(@str / 2)' },
+    ],
     webhookUrl: '',
     characterName: '',
     autoSend: false,
@@ -508,8 +483,8 @@ export const DiceMacros: React.FC = () => {
       setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       
       // Send to Discord if enabled
-      if (state.autoSend && state.webhookUrl) {
-        const discordErr = await sendToDiscord(state.webhookUrl, state.characterName || '', result);
+      if (state.autoSend) {
+        const discordErr = await sendToDiscord(state.webhookUrl || '', state.characterName || '', result);
         if (discordErr) setError(`Discord: ${discordErr}`);
       }
     } catch (err: unknown) {
@@ -525,9 +500,9 @@ export const DiceMacros: React.FC = () => {
       setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       
       // Send to Discord if enabled
-      if (state.autoSend && state.webhookUrl) {
+      if (state.autoSend) {
         for (const result of results) {
-          const discordErr = await sendToDiscord(state.webhookUrl, state.characterName || '', result);
+          const discordErr = await sendToDiscord(state.webhookUrl || '', state.characterName || '', result);
           if (discordErr) {
             setError(`Discord: ${discordErr}`);
             break;
@@ -719,7 +694,8 @@ export const DiceMacros: React.FC = () => {
           </label>
         </div>
         <p className="text-xs text-stone-500 mt-2">
-          Get webhook URL from Discord: Channel Settings → Integrations → Webhooks → New Webhook
+          ⚙️ **Configurable Webhook:** Input your own D&D group's webhook URL. It will be sent securely to the Vercel serverless proxy to bypass CORS blocks and format the rich embed cards. 
+          Saved locally in your browser.
         </p>
       </div>
 
@@ -860,8 +836,8 @@ export const DiceMacros: React.FC = () => {
                 setRollResults(prev => [finalResult, ...prev]);
                 setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
                 
-                if (state.autoSend && state.webhookUrl) {
-                  sendToDiscord(state.webhookUrl, state.characterName || '', finalResult).then(discordErr => {
+                if (state.autoSend) {
+                  sendToDiscord(state.webhookUrl || '', state.characterName || '', finalResult).then(discordErr => {
                     if (discordErr) setError(`Discord: ${discordErr}`);
                   });
                 }

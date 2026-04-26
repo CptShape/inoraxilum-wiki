@@ -1,5 +1,7 @@
 import { Chapter } from '../../../types';
 import { mythologyChapter } from '../mythology/mythology';
+import { chronicleChapter } from './history/history';
+import { worldMapChapter } from './map/world-map';
 
 export const worldbuildingHandbookCodex: Chapter = {
   id: 'worldbuilding-handbook-codex',
@@ -7,7 +9,7 @@ export const worldbuildingHandbookCodex: Chapter = {
   subtitle: '???',
   icon: '⚔️',
   content: 'src/data/worldbuilding-handbook/chapters/worldbuilding-handbook-chapters.md',
-  subChapters: [mythologyChapter],
+  subChapters: [chronicleChapter, worldMapChapter, mythologyChapter],
 };
 
-export { mythologyChapter };
+export { chronicleChapter, worldMapChapter, mythologyChapter };

@@ -11,6 +11,9 @@ export interface Chapter {
   subChapters?: Chapter[]; // Recursive - sub-chapters are also Chapter type
   prevChapter?: string;
   nextChapter?: string;
+  // Width percentage for the content container (1 = 100%, 0.5 = 50%)
+  // Defaults to 0.5
+  width?: number;
 }
 
 export interface TimelineEvent {

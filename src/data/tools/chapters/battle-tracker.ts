@@ -7,6 +7,7 @@ export const battleTrackerChapter: Chapter = {
   icon: '⚔️',
   content: 'battle-tracker',
   subChapters: [],
+  width: 0.9,
 };
 
 export {  };

@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { ContentView } from './components/ContentView';
 import { MarkdownView } from './components/MarkdownView';
-import DiceRoller from './components/DiceRoller';
 import { allChapters, chapters } from './data/chapters';
 import { Chapter, ViewMode } from './types';
 
@@ -261,7 +260,6 @@ function App() {
             nextChapter={nextChapter}
             allChapters={chapters}
           />
-          <DiceRoller />
         </>
       ) : (
         <MarkdownView

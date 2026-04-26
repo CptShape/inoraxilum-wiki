@@ -7,6 +7,7 @@ export const diceMacrosChapter: Chapter = {
     icon: '🎲',
     content: 'dice-macros',
     prevChapter: 'battle-tracker',
+    width: 0.5,
 };
 
 export {  };

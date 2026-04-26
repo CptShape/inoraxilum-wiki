@@ -188,14 +188,14 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ config, onChapterSel
       {/* Body */}
       <div className="px-3 py-8 sm:px-6 pb-12">
         {/* Column headers */}
-        <div className="grid grid-cols-[180px_60px_1fr] gap-4 mb-4">
+        <div className="grid grid-cols-[2.5fr_1.5fr_6fr] gap-4 mb-4">
           <div className="text-[10px] uppercase tracking-[0.28em] text-amber-700" style={{ fontFamily: "'Cinzel', serif" }}>Eras</div>
           <div className="text-center text-[10px] uppercase tracking-[0.28em] text-amber-700" style={{ fontFamily: "'Cinzel', serif" }}>—</div>
           <div className="text-[10px] uppercase tracking-[0.28em] text-amber-700" style={{ fontFamily: "'Cinzel', serif" }}>Events</div>
         </div>
 
         {/* Timeline area */}
-        <div className="grid grid-cols-[180px_60px_1fr] gap-4" style={{ height: timelineHeight }}>
+        <div className="grid grid-cols-[2.5fr_1.5fr_6fr] gap-4" style={{ height: timelineHeight }}>
 
           {/* ── Column 1: Eras ──────────────────────────────── */}
           <div className="relative overflow-hidden">

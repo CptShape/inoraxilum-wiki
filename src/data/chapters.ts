@@ -11,7 +11,6 @@ import { toolsChapter } from './tools/chapters/tools';
 export const chapters: Chapter[] = [
   playersHandbookCodex,
   worldbuildingHandbookCodex,
-  chronicleChapter,
   styleChapter,
   pleiadasSistersChapter,
   toolsChapter
@@ -30,7 +29,6 @@ export const allChapters: Chapter[] = [
 export {
   playersHandbookCodex,
   worldbuildingHandbookCodex,
-  chronicleChapter,
   styleChapter,
   pleiadasSistersChapter,
   toolsChapter
