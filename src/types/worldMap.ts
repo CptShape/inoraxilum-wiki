@@ -6,6 +6,8 @@ export interface WorldMapHotspot {
   y: number; // percent from top, 0-100
   w: number; // percent width, 0-100
   h: number; // percent height, 0-100
+  shape?: 'rect' | 'polygon';
+  points?: Array<{ x: number; y: number }>;
   color?: string;
   description?: string;
 }

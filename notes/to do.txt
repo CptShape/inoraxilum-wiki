@@ -49,14 +49,6 @@ Titan 2000+
 races/orc da druid ırkı yapılacak
 
 
-RACES
-Dragonborn'da subırkların dragon güçleri tabloları yapılacak.
-Jötunn
-Orc
-Ex-Machina - runic table
-Undead
-
-
 
 
 
@@ -118,3 +110,19 @@ Bard -
 Cleric - 
 
 Artificier - 
+
+
+
+
+
+
+
+
+
+
+
+Acid
+Lightning
+Poison
+Fire
+Cold

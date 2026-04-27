@@ -6,6 +6,7 @@ import MythologyHub from './mythology/MythologyHub';
 import { allGods } from '../data/worldbuilding-handbook/mythology/gods';
 import { BattleTracker } from './BattleTracker';
 import { DiceMacros } from './DiceMacros';
+import { MessageSender } from './MessageSender';
 import { WorldMap } from './WorldMap';
 
 interface ContentViewProps {
@@ -432,6 +433,13 @@ export const ContentView: React.FC<ContentViewProps> = ({
             </div>
           ) : null}
 
+          {/* ── Message Sender (special chapter) ───────────────────────────── */}
+          {activeChapter.content === 'message-sender' ? (
+            <div className="-mx-4 -mb-6">
+              <MessageSender />
+            </div>
+          ) : null}
+
           {/* ── World Map (special chapter) ───────────────────────────────── */}
           {activeChapter.content === 'world-map' ? (
             <div className="-mx-4 -mb-6">
@@ -440,7 +448,7 @@ export const ContentView: React.FC<ContentViewProps> = ({
           ) : null}
 
           {/* ── Markdown content ───────────────────────────────────────────── */}
-          {activeChapter.content && activeChapter.content !== 'mythology' && activeChapter.content !== 'battle-tracker' && activeChapter.content !== 'dice-macros' && activeChapter.content !== 'world-map' && (
+          {activeChapter.content && activeChapter.content !== 'mythology' && activeChapter.content !== 'battle-tracker' && activeChapter.content !== 'dice-macros' && activeChapter.content !== 'message-sender' && activeChapter.content !== 'world-map' && (
             <div style={{ fontFamily: "'IM Fell English', serif" }}>
               <MarkdownRenderer
                 path={activeChapter.content}

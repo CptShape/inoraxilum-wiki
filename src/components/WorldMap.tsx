@@ -35,6 +35,42 @@ const HOTSPOT_COLORS = [
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type DragPoint = { x: number; y: number };
+type HotspotShape = 'rect' | 'polygon';
+
+const getHotspotShape = (hotspot: WorldMapHotspot): HotspotShape =>
+  hotspot.shape === 'polygon' && hotspot.points && hotspot.points.length >= 3 ? 'polygon' : 'rect';
+
+const getHotspotPoints = (hotspot: WorldMapHotspot): DragPoint[] => {
+  if (getHotspotShape(hotspot) === 'polygon') {
+    return hotspot.points ?? [];
+  }
+
+  return [
+    { x: hotspot.x, y: hotspot.y },
+    { x: hotspot.x + hotspot.w, y: hotspot.y },
+    { x: hotspot.x + hotspot.w, y: hotspot.y + hotspot.h },
+    { x: hotspot.x, y: hotspot.y + hotspot.h },
+  ];
+};
+
+const getBoundsFromPoints = (points: DragPoint[]) => {
+  const xs = points.map((point) => point.x);
+  const ys = points.map((point) => point.y);
+
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  return {
+    x: Number(minX.toFixed(2)),
+    y: Number(minY.toFixed(2)),
+    w: Number((maxX - minX).toFixed(2)),
+    h: Number((maxY - minY).toFixed(2)),
+  };
+};
+
+const toSvgPointString = (points: DragPoint[]) => points.map((point) => `${point.x},${point.y}`).join(' ');
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -52,7 +88,10 @@ export const WorldMap: React.FC = () => {
   const [helperResult, setHelperResult] = useState<string>('');
 
   // ── Edit mode state ─────────────────────────────────────────────────────────
+  const [drawShape, setDrawShape] = useState<HotspotShape>('rect');
   const [editFirstPoint, setEditFirstPoint] = useState<DragPoint | null>(null);
+  const [polygonDraftPoints, setPolygonDraftPoints] = useState<DragPoint[]>([]);
+  const [hoverPoint, setHoverPoint] = useState<DragPoint | null>(null);
   // preview rect while user is dragging the second point
   const [previewRect, setPreviewRect] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
   // which hotspot id is currently being renamed/configured
@@ -114,6 +153,8 @@ export const WorldMap: React.FC = () => {
     setHelperFirstPoint(null);
     setHelperResult('');
     setEditFirstPoint(null);
+    setPolygonDraftPoints([]);
+    setHoverPoint(null);
     setPreviewRect(null);
     setEditingHotspotId(null);
   };
@@ -262,13 +303,18 @@ export const WorldMap: React.FC = () => {
     }
 
     if (mode === 'edit') {
+      if (drawShape === 'polygon') {
+        setPolygonDraftPoints((currentPoints) => [...currentPoints, point]);
+        return;
+      }
+
       if (!editFirstPoint) {
         setEditFirstPoint(point);
         setPreviewRect({ x: point.x, y: point.y, w: 0, h: 0 });
         return;
       }
 
-      // Second click: commit the hotspot
+      // Second click: commit the rectangle hotspot
       const newHotspot: WorldMapHotspot = {
         id: uid(),
         label: 'New Location',
@@ -277,6 +323,7 @@ export const WorldMap: React.FC = () => {
         y: Number(Math.min(editFirstPoint.y, point.y).toFixed(2)),
         w: Number(Math.abs(editFirstPoint.x - point.x).toFixed(2)),
         h: Number(Math.abs(editFirstPoint.y - point.y).toFixed(2)),
+        shape: 'rect',
         color: HOTSPOT_COLORS[currentMap.hotspots.length % HOTSPOT_COLORS.length],
         description: '',
       };
@@ -290,8 +337,12 @@ export const WorldMap: React.FC = () => {
   };
 
   const handleMapMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (mode === 'edit' && editFirstPoint) {
-      const point = getClickPercent(event);
+    if (mode !== 'edit') return;
+
+    const point = getClickPercent(event);
+    setHoverPoint(point);
+
+    if (drawShape === 'rect' && editFirstPoint) {
       setPreviewRect({
         x: Math.min(editFirstPoint.x, point.x),
         y: Math.min(editFirstPoint.y, point.y),
@@ -299,6 +350,33 @@ export const WorldMap: React.FC = () => {
         h: Math.abs(editFirstPoint.y - point.y),
       });
     }
+  };
+
+  const commitPolygonHotspot = () => {
+    if (polygonDraftPoints.length < 3) return;
+
+    const newHotspot: WorldMapHotspot = {
+      id: uid(),
+      label: 'New Location',
+      targetMapId: '',
+      ...getBoundsFromPoints(polygonDraftPoints),
+      shape: 'polygon',
+      points: polygonDraftPoints,
+      color: HOTSPOT_COLORS[currentMap.hotspots.length % HOTSPOT_COLORS.length],
+      description: '',
+    };
+
+    patchCurrentMap({ hotspots: [...currentMap.hotspots, newHotspot] });
+    setPolygonDraftPoints([]);
+    setHoverPoint(null);
+    setEditingHotspotId(newHotspot.id);
+  };
+
+  const cancelDraft = () => {
+    setEditFirstPoint(null);
+    setPolygonDraftPoints([]);
+    setHoverPoint(null);
+    setPreviewRect(null);
   };
 
   const handleHotspotClick = (hotspot: WorldMapHotspot) => {
@@ -315,8 +393,7 @@ export const WorldMap: React.FC = () => {
     setMode(next);
     setHelperFirstPoint(null);
     setHelperResult('');
-    setEditFirstPoint(null);
-    setPreviewRect(null);
+    cancelDraft();
     if (next !== 'edit') setEditingHotspotId(null);
   };
 
@@ -469,16 +546,57 @@ export const WorldMap: React.FC = () => {
 
       {mode === 'edit' && (
         <div className="rounded-xl border border-emerald-700/40 bg-emerald-950/20 p-4 text-sm text-emerald-100">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => {
+                setDrawShape('rect');
+                cancelDraft();
+              }}
+              className={`rounded border px-2.5 py-1 text-xs font-bold ${drawShape === 'rect' ? 'border-emerald-300/60 bg-emerald-900/60 text-emerald-50' : 'border-emerald-700/40 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40'}`}
+            >
+              Rectangle
+            </button>
+            <button
+              onClick={() => {
+                setDrawShape('polygon');
+                cancelDraft();
+              }}
+              className={`rounded border px-2.5 py-1 text-xs font-bold ${drawShape === 'polygon' ? 'border-emerald-300/60 bg-emerald-900/60 text-emerald-50' : 'border-emerald-700/40 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40'}`}
+            >
+              Polygon
+            </button>
+            {(editFirstPoint || polygonDraftPoints.length > 0) && (
+              <button
+                onClick={cancelDraft}
+                className="rounded border border-red-700/40 bg-red-950/40 px-2.5 py-1 text-xs font-bold text-red-200 hover:bg-red-900/50"
+              >
+                Cancel Draft
+              </button>
+            )}
+            {drawShape === 'polygon' && polygonDraftPoints.length >= 3 && (
+              <button
+                onClick={commitPolygonHotspot}
+                className="rounded border border-amber-700/40 bg-amber-950/40 px-2.5 py-1 text-xs font-bold text-amber-100 hover:bg-amber-900/50"
+              >
+                Finish Shape
+              </button>
+            )}
+          </div>
           <p className="font-bold" style={{ fontFamily: "'Cinzel', serif" }}>
-            Edit Mode — click two corners on the map to draw a new hotspot.
+            Edit Mode — {drawShape === 'rect' ? 'click two corners to draw a rectangle hotspot.' : 'click multiple points to trace a polygon hotspot.'}
           </p>
           <p className="mt-1 text-emerald-100/70">
             After placing a hotspot, rename it in the right panel, choose a color, and optionally enable <strong>Nested</strong> to create a child map behind it.
             All changes are saved to browser storage. Export the atlas JSON to make them permanent.
           </p>
-          {editFirstPoint && (
+          {drawShape === 'rect' && editFirstPoint && (
             <p className="mt-2 text-emerald-300">
               ✦ First corner placed at {editFirstPoint.x}%, {editFirstPoint.y}%. Click the opposite corner.
+            </p>
+          )}
+          {drawShape === 'polygon' && (
+            <p className="mt-2 text-emerald-300">
+              ✦ Points placed: {polygonDraftPoints.length}. Add at least 3 points, then click <strong>Finish Shape</strong>.
             </p>
           )}
         </div>
@@ -492,51 +610,116 @@ export const WorldMap: React.FC = () => {
             className={`relative overflow-hidden rounded-xl border border-amber-900/40 select-none ${cursorClass}`}
             onClick={handleMapClick}
             onMouseMove={handleMapMouseMove}
+            onMouseLeave={() => setHoverPoint(null)}
           >
             {renderMapImage()}
 
             {/* Existing hotspots */}
+            {showHotspots && (
+              <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                {currentMap.hotspots.map((hotspot) => {
+                  const isBeingEdited = editingHotspotId === hotspot.id;
+                  const color = hotspot.color ?? '#f59e0b';
+                  const hasChild = !!hotspot.targetMapId && !!atlas.maps[hotspot.targetMapId];
+                  const shape = getHotspotShape(hotspot);
+                  return (
+                    <g key={hotspot.id}>
+                      {shape === 'polygon' ? (
+                        <polygon
+                          points={toSvgPointString(getHotspotPoints(hotspot))}
+                          vectorEffect="non-scaling-stroke"
+                          className="pointer-events-auto transition-all"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleHotspotClick(hotspot);
+                          }}
+                          style={{
+                            fill: 'rgba(0,0,0,0.25)',
+                            stroke: color,
+                            strokeWidth: isBeingEdited ? 0.55 : 0.35,
+                            strokeDasharray: mode === 'edit' ? undefined : '1.4 0.8',
+                            cursor: mode === 'view' && hasChild ? 'pointer' : mode === 'edit' ? 'pointer' : 'default',
+                            filter: `drop-shadow(0 0 ${isBeingEdited ? '0.9px' : '0.5px'} ${color})`,
+                          }}
+                        />
+                      ) : (
+                        <rect
+                          x={hotspot.x}
+                          y={hotspot.y}
+                          width={hotspot.w}
+                          height={hotspot.h}
+                          rx={1.2}
+                          ry={1.2}
+                          vectorEffect="non-scaling-stroke"
+                          className="pointer-events-auto transition-all"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleHotspotClick(hotspot);
+                          }}
+                          style={{
+                            fill: 'rgba(0,0,0,0.25)',
+                            stroke: color,
+                            strokeWidth: isBeingEdited ? 0.55 : 0.35,
+                            strokeDasharray: mode === 'edit' ? undefined : '1.4 0.8',
+                            cursor: mode === 'view' && hasChild ? 'pointer' : mode === 'edit' ? 'pointer' : 'default',
+                            filter: `drop-shadow(0 0 ${isBeingEdited ? '0.9px' : '0.5px'} ${color})`,
+                          }}
+                        />
+                      )}
+
+                    </g>
+                  );
+                })}
+              </svg>
+            )}
+
             {showHotspots && currentMap.hotspots.map((hotspot) => {
-              const isBeingEdited = editingHotspotId === hotspot.id;
               const color = hotspot.color ?? '#f59e0b';
               const hasChild = !!hotspot.targetMapId && !!atlas.maps[hotspot.targetMapId];
 
               return (
-                <button
-                  key={hotspot.id}
-                  onClick={(e) => { e.stopPropagation(); handleHotspotClick(hotspot); }}
-                  className={`absolute rounded-lg border-2 bg-black/25 backdrop-blur-[1px] transition-all focus:outline-none ${
-                    mode === 'view' && hasChild ? 'hover:scale-[1.02] hover:bg-black/45 cursor-pointer' : ''
-                  } ${mode === 'edit' ? 'cursor-pointer' : ''} ${isBeingEdited ? 'ring-2 ring-white/70 scale-[1.02]' : ''}`}
+                <div
+                  key={`${hotspot.id}-label`}
+                  className="pointer-events-none absolute z-[1] -translate-x-1/2 -translate-y-1/2"
                   style={{
-                    left: `${hotspot.x}%`,
-                    top: `${hotspot.y}%`,
-                    width: `${hotspot.w}%`,
-                    height: `${hotspot.h}%`,
-                    borderColor: color,
-                    borderStyle: mode === 'edit' ? 'solid' : 'dashed',
-                    boxShadow: `0 0 ${isBeingEdited ? '28px' : '14px'} ${color}${isBeingEdited ? '88' : '44'}`,
+                    left: `${hotspot.x + hotspot.w / 2}%`,
+                    top: `${hotspot.y + hotspot.h / 2}%`,
+                    maxWidth: 'min(10rem, 28vw)',
                   }}
-                  title={hotspot.description ?? hotspot.label}
                 >
                   <span
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border bg-stone-950/90 px-2 py-0.5 text-xs font-bold pointer-events-none"
+                    className="block truncate rounded-full border bg-stone-950/90 px-2 py-0.5 text-[10px] font-bold leading-tight shadow-lg sm:text-xs"
                     style={{ color, borderColor: `${color}55`, fontFamily: "'Cinzel', serif" }}
+                    title={hotspot.label}
                   >
                     {hotspot.label}
                     {hasChild && ' ›'}
                   </span>
-                  {mode === 'edit' && (
-                    <button
-                      onClick={(e) => { e.stopPropagation(); deleteHotspot(hotspot.id); }}
-                      className="absolute right-1 top-1 rounded-full bg-red-950/80 p-0.5 text-red-300 hover:bg-red-800/80 opacity-0 hover:opacity-100 transition-opacity"
-                    >
-                      <X size={12} />
-                    </button>
-                  )}
-                </button>
+                </div>
               );
             })}
+
+            {mode === 'edit' && editingHotspotId && (() => {
+              const hotspot = currentMap.hotspots.find((candidate) => candidate.id === editingHotspotId);
+              if (!hotspot) return null;
+
+              return (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    deleteHotspot(hotspot.id);
+                  }}
+                  className="absolute z-10 rounded-full bg-red-950/85 p-1 text-red-300 hover:bg-red-800/85"
+                  style={{
+                    left: `calc(${hotspot.x + hotspot.w}% - 1.4rem)`,
+                    top: `${hotspot.y}%`,
+                  }}
+                  title="Delete hotspot"
+                >
+                  <X size={12} />
+                </button>
+              );
+            })()}
 
             {/* Preview rect while drawing */}
             {mode === 'edit' && previewRect && previewRect.w > 0.5 && previewRect.h > 0.5 && (
@@ -549,6 +732,41 @@ export const WorldMap: React.FC = () => {
                   height: `${previewRect.h}%`,
                 }}
               />
+            )}
+
+            {mode === 'edit' && drawShape === 'polygon' && polygonDraftPoints.length > 0 && (
+              <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                {polygonDraftPoints.length >= 2 && (
+                  <polyline
+                    points={toSvgPointString(polygonDraftPoints)}
+                    fill="none"
+                    stroke="rgba(16,185,129,0.95)"
+                    strokeWidth="0.4"
+                    vectorEffect="non-scaling-stroke"
+                    strokeDasharray="1.2 0.7"
+                  />
+                )}
+                {hoverPoint && (
+                  <polyline
+                    points={toSvgPointString([...polygonDraftPoints, hoverPoint])}
+                    fill="none"
+                    stroke="rgba(52,211,153,0.8)"
+                    strokeWidth="0.28"
+                    vectorEffect="non-scaling-stroke"
+                    strokeDasharray="0.8 0.6"
+                  />
+                )}
+                {polygonDraftPoints.length >= 3 && (
+                  <polygon
+                    points={toSvgPointString(polygonDraftPoints)}
+                    fill="rgba(16,185,129,0.12)"
+                    stroke="rgba(16,185,129,0.85)"
+                    strokeWidth="0.34"
+                    vectorEffect="non-scaling-stroke"
+                    strokeDasharray="1.2 0.7"
+                  />
+                )}
+              </svg>
             )}
 
             {/* First-click dot for both modes */}
@@ -564,6 +782,13 @@ export const WorldMap: React.FC = () => {
                 style={{ left: `${editFirstPoint.x}%`, top: `${editFirstPoint.y}%` }}
               />
             )}
+            {(mode === 'edit' && drawShape === 'polygon') && polygonDraftPoints.map((point, index) => (
+              <div
+                key={`${point.x}-${point.y}-${index}`}
+                className="pointer-events-none absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-200 bg-emerald-500 shadow-[0_0_16px_rgba(16,185,129,0.65)]"
+                style={{ left: `${point.x}%`, top: `${point.y}%` }}
+              />
+            ))}
           </div>
         </div>
 
@@ -631,11 +856,11 @@ export const WorldMap: React.FC = () => {
                 <p className="text-xs uppercase tracking-widest text-emerald-500" style={{ fontFamily: "'Cinzel', serif" }}>
                   Hotspots ({currentMap.hotspots.length})
                 </p>
-                <p className="text-xs text-stone-500">Click map to draw a new one</p>
+                <p className="text-xs text-stone-500">Draw mode: {drawShape}</p>
               </div>
 
               {currentMap.hotspots.length === 0 ? (
-                <p className="text-sm italic text-stone-600">No hotspots yet. Click two corners on the map to place one.</p>
+                <p className="text-sm italic text-stone-600">No hotspots yet. Use rectangle or polygon drawing on the map to place one.</p>
               ) : (
                 <div className="space-y-3 max-h-[500px] overflow-y-auto pr-1">
                   {currentMap.hotspots.map((hotspot) => {
@@ -702,6 +927,12 @@ export const WorldMap: React.FC = () => {
                                 onChange={(e) => updateHotspot(hotspot.id, { description: e.target.value })}
                                 className="w-full rounded bg-stone-900 border border-stone-700 px-2 py-1 text-sm text-amber-100 focus:outline-none focus:border-emerald-500/50"
                               />
+                            </div>
+                            <div>
+                              <label className="block text-xs text-stone-400 mb-1">Shape</label>
+                              <div className="rounded border border-stone-700/50 bg-stone-900 px-2 py-1 text-sm text-emerald-200">
+                                {getHotspotShape(hotspot) === 'polygon' ? `Polygon (${getHotspotPoints(hotspot).length} points)` : 'Rectangle'}
+                              </div>
                             </div>
                             <div>
                               <label className="block text-xs text-stone-400 mb-1">Color</label>
